@@ -2,6 +2,7 @@
   "name": "@contentz/build",
   "description": "Build your Contentz website for production",
   "version": "1.0.0",
+  "main": "src/index.js",
   "bin": "./cli.js",
   "files": [
     "src",
