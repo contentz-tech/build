@@ -68,7 +68,7 @@
     "react-dom": "16.8.6",
     "react-slugify": "1.2.0",
     "relative": "3.0.2",
-    "terser": "3.17.0"
+    "terser": "4.0.2"
   },
   "devDependencies": {
     "eslint": "5.16.0",
