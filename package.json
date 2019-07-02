@@ -54,7 +54,7 @@
     "emotion-server": "10.0.14",
     "execa": "2.0.2",
     "get-hrefs": "2.0.0",
-    "globby": "9.2.0",
+    "globby": "10.0.0",
     "gray-matter": "4.0.2",
     "is-absolute": "1.0.0",
     "local-chrome": "0.1.0",
