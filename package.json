@@ -39,8 +39,8 @@
     "pretty": "prettier --check 'src/**/*.js'"
   },
   "dependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/preset-env": "7.4.5",
+    "@babel/core": "7.5.0",
+    "@babel/preset-env": "7.5.0",
     "@emotion/babel-preset-css-prop": "10.0.14",
     "@emotion/core": "10.0.14",
     "@mdx-js/mdx": "1.0.21",
