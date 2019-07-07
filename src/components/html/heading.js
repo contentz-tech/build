@@ -1,20 +1,22 @@
-const { jsx } = require("@emotion/core");
+const { jsx, Styled } = require("theme-ui");
 const slugify = require("react-slugify").default;
 
-exports.H1 = props =>
-  jsx("h1", {
-    css: {
-      fontSize: "2.25em",
-      fontWeight: "normal",
-      letterSpacing: "-0.028em",
-      margin: "1em 0"
-    },
-    id: slugify(jsx("h1", props)),
-    ...props
-  });
+exports.H1 = Styled.h1;
+// exports.H1 = props => {
+//   return jsx("h1", {
+//     css: {
+//       fontSize: "2.25em",
+//       fontWeight: "normal",
+//       letterSpacing: "-0.028em",
+//       margin: "1em 0"
+//     },
+//     id: slugify(jsx("h1", props)),
+//     ...props
+//   });
+// };
 
-exports.H2 = props =>
-  jsx("h2", {
+exports.H2 = props => {
+  return jsx("h2", {
     css: {
       fontSize: "2em",
       fontWeight: "normal",
@@ -23,6 +25,7 @@ exports.H2 = props =>
     id: slugify(jsx("h2", props)),
     ...props
   });
+};
 
 exports.H3 = props =>
   jsx("h3", {

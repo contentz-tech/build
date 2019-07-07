@@ -1,4 +1,4 @@
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 const Card = require("../card");
 
 exports.Code = props =>

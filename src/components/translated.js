@@ -1,5 +1,5 @@
 const { Fragment } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 const { parse } = require("url");
 
 const { Anchor } = require("./html/text");

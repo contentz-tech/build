@@ -1,4 +1,4 @@
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 const getHrefs = require("get-hrefs");
 const parseURL = require("parse-url");
 const { join } = require("path");

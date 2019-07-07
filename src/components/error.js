@@ -1,33 +1,36 @@
 const { Fragment } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx, ThemeProvider, Styled } = require("theme-ui");
 
 const { Title, Description } = require("./lead");
-const { Anchor } = require("./html/text");
 const Header = require("./header");
 const { useIntl } = require("./intl");
+const theme = require("../theme");
 
 function ErrorPage({ config = {} } = {}) {
   const { messages } = useIntl();
 
   return jsx(
-    Fragment,
-    null,
+    ThemeProvider,
+    { theme },
     jsx(Header, { ...config }),
     jsx(
       "section",
       {
-        css: {
+        sx: {
           boxSizing: "border-box",
-          fontSize: "1.25em",
+          fontSize: 4,
           minHeight: "calc(90vh - 58px)",
-          margin: "10vh auto 0",
+          mt: "10vh",
+          mx: "auto",
+          mb: 0,
           maxWidth: "1000px",
-          padding: "0 10vw 0",
+          py: 0,
+          px: "10vw",
           "@media (max-width: 1000px)": {
-            fontSize: "1em"
+            fontSize: 2
           },
           "@media (max-width: 1000px) and (orientation: landscape)": {
-            marginBottom: "10vh"
+            mb: "10vh"
           }
         }
       },
@@ -36,19 +39,19 @@ function ErrorPage({ config = {} } = {}) {
       jsx(
         "div",
         {
-          css: {
+          sx: {
             a: {
               display: "block"
             }
           }
         },
-        jsx(Anchor, { href: "/" }, messages.error.goHome),
+        jsx(Styled.a, { href: "/" }, messages.error.goHome),
         config.hasArticles &&
-          jsx(Anchor, { href: "/articles/" }, messages.error.goArticles),
+          jsx(Styled.a, { href: "/articles/" }, messages.error.goArticles),
         config.hasLinks &&
-          jsx(Anchor, { href: "/links/" }, messages.error.goLinks),
+          jsx(Styled.a, { href: "/links/" }, messages.error.goLinks),
         config.hasSlides &&
-          jsx(Anchor, { href: "/slides/" }, messages.error.goSlides)
+          jsx(Styled.a, { href: "/slides/" }, messages.error.goSlides)
       )
     )
   );

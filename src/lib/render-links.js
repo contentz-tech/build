@@ -1,5 +1,5 @@
 const { renderStylesToString } = require("emotion-server");
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 const ReactDOMServer = require("react-dom/server");
 const { join } = require("path");
 

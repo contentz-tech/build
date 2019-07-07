@@ -1,35 +1,23 @@
-const { jsx } = require("@emotion/core");
+const { jsx, Styled } = require("theme-ui");
 const format = require("date-fns/format");
 const { useIntl } = require("./intl");
 
-exports.Title = props =>
-  jsx(
-    "h1",
-    Object.assign({}, props, {
-      css: {
-        fontSize: "2.25em",
-        fontWeight: "bold",
-        letterSpacing: "-0.028em",
-        margin: "1em 0"
-      }
-    }),
-    props.children
-  );
+exports.Title = Styled.h1;
 
 exports.Description = props =>
   jsx(
     "p",
     Object.assign({}, props, {
-      css: {
+      sx: {
         borderLeft: "3px solid black",
         boxSizing: "border-box",
-        paddingLeft: "calc(0.5em - 3px)",
-        margin: "-1em 0 1em -0.5em",
-        fontSize: "1.5em",
-        fontWeight: 200,
-        "@media (prefers-color-scheme: dark)": {
-          borderLeftColor: "white"
-        }
+        pl: 2,
+        mt: -4,
+        mr: 0,
+        ml: 4,
+        ml: -2,
+        fontSize: 5,
+        fontWeight: "light",
       }
     }),
     props.children
@@ -43,9 +31,9 @@ exports.Date = props => {
     "time",
     Object.assign({}, props, {
       dateTime: props.date.toJSON(),
-      css: {
+      sx: {
         position: "absolute",
-        right: "0.5em",
+        right: 2,
         bottom: "100%"
       }
     }),

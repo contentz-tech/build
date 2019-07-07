@@ -1,48 +1,98 @@
-const { jsx } = require("@emotion/core");
+const React = require("react");
+const { jsx, Styled } = require("theme-ui");
+const slugify = require("react-slugify").default;
 
-const { H1, H2, H3, H4, H5, H6 } = require("./html/heading");
-const { P, Blockquote, Anchor } = require("./html/text");
-const { Image, Figure } = require("./html/media");
-const { UL, OL, LI } = require("./html/list");
-const { Table, TR, TH, TD, THead } = require("./html/table");
-const { Code, Pre } = require("./html/code");
 const FileTree = require("./file-tree");
 
-module.exports = {
-  wrapper: props => jsx("article", props),
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  h4: H4,
-  h5: H5,
-  h6: H6,
-  img: Image,
-  figure: Figure,
-  ul: UL,
-  ol: OL,
-  li: LI,
-  code: props => {
-    switch (props.className) {
-      case "language-file-tree": {
-        return jsx(FileTree, props);
+const Card = require("./card");
+
+const Pre = props => jsx(Card, { selectable: true }, jsx(Styled.pre, props));
+
+const Image = props => {
+  const img = jsx(Styled.img, {
+    ...props,
+    loading: "lazy"
+  });
+  if (!props.title) return img;
+  return jsx(
+    Card,
+    null,
+    jsx(
+      "figure",
+      {
+        sx: {
+          textAlign: "center",
+          margin: 0,
+          width: "100%"
+        }
+      },
+      img,
+      jsx(
+        "figcaption",
+        {
+          sx: {
+            fontSize: 2,
+            textAlign: "center",
+            mt: 3,
+            color: "muted"
+          }
+        },
+        props.title
+      )
+    )
+  );
+};
+
+const heading = tagName => props => {
+  return jsx(Styled[tagName], { ...props, id: slugify(jsx("h2", props)) });
+};
+
+module.exports = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "img",
+  "ul",
+  "ol",
+  "li",
+  "code",
+  "inlineCode",
+  "a",
+  "p",
+  "blockquote",
+  "table",
+  "th",
+  "tr",
+  "thead"
+]
+  .map(tagName => {
+    switch (tagName) {
+      case "inlineCode": {
+        return [tagName, Styled.code];
+      }
+      case "h1":
+      case "h2":
+      case "h3":
+      case "h4":
+      case "h5":
+      case "h6": {
+        return [tagName, heading(tagName)];
+      }
+      case "img": {
+        return [tagName, Image];
       }
       default: {
-        return jsx(Code, props);
+        return [tagName, Styled[tagName]];
       }
     }
-  },
-  pre: props => {
-    if (props.children.props.props.className === "language-file-tree")
-      return props.children;
-    return jsx(Pre, props);
-  },
-  inlineCode: Code,
-  a: Anchor,
-  p: P,
-  blockquote: Blockquote,
-  table: Table,
-  th: TH,
-  tr: TR,
-  td: TD,
-  thead: THead
-};
+  })
+  .reduce(
+    (components, [tagName, component]) => ({
+      ...components,
+      [tagName]: component
+    }),
+    { wrapper: React.Fragment, pre: Pre }
+  );

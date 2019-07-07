@@ -1,5 +1,5 @@
 const { createContext, useContext } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 
 const i18n = createContext(null);
 

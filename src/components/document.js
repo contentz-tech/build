@@ -1,5 +1,6 @@
-const { jsx } = require("@emotion/core");
+const { jsx, ThemeProvider } = require("theme-ui");
 const { join } = require("path");
+const theme = require("../theme");
 
 const formatURL = (domain, path) => {
   if (!path) return domain;
@@ -160,33 +161,34 @@ function Document({
         .map(link => jsx("link", { rel: "prefetch", href: link, key: link }))
     ),
     jsx(
-      "body",
-      {
-        css: {
-          background: "white",
-          color: "black",
-          margin: 0,
-          fontSize: "18px",
-          fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-          "@media (prefers-color-scheme: dark)": {
-            background: "#151515",
-            color: "white"
+      ThemeProvider,
+      { theme },
+      jsx(
+        "body",
+        {
+          sx: {
+            margin: 0,
+            backgroundColor: "background",
+            color: "text",
+            fontSize: 2,
+            fontFamily: "body",
+            fontWeight: "body",
+            lineHeight: "body"
           }
-        }
-      },
-      children
-        ? jsx("main", null, children)
-        : jsx("main", { dangerouslySetInnerHTML: { __html: content } }),
-      config.analytics &&
-        jsx("script", {
-          async: true,
-          src: `https://www.googletagmanager.com/gtag/js?id=${config.analytics}`
-        }),
-      config.analytics && jsx("script", { src: "/load-analytics.js" }),
-      config.sw !== false
-        ? jsx("script", { src: "/load-sw.js" })
-        : jsx("script", { src: "/unload-sw.js" })
+        },
+        children
+          ? jsx("main", null, children)
+          : jsx("main", { dangerouslySetInnerHTML: { __html: content } }),
+        config.analytics &&
+          jsx("script", {
+            async: true,
+            src: `https://www.googletagmanager.com/gtag/js?id=${config.analytics}`
+          }),
+        config.analytics && jsx("script", { src: "/load-analytics.js" }),
+        config.sw !== false
+          ? jsx("script", { src: "/load-sw.js" })
+          : jsx("script", { src: "/unload-sw.js" })
+      )
     )
   );
 }

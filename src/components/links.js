@@ -1,18 +1,18 @@
-const { Fragment } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx, ThemeProvider } = require("theme-ui");
 const format = require("date-fns/format");
 
 const { Title } = require("./lead");
 const Header = require("./header");
 const { useIntl } = require("./intl");
+const theme = require("../theme");
 
 function LinksPage({ config = {}, links = [] } = {}) {
   const { messages, language } = useIntl();
   const locale = require(`date-fns/locale/${language}`);
 
   return jsx(
-    Fragment,
-    null,
+    ThemeProvider,
+    { theme },
     jsx(Header, { ...config, messages, target: "/" }),
     jsx(
       "section",
@@ -28,16 +28,11 @@ function LinksPage({ config = {}, links = [] } = {}) {
       },
       jsx(Title, null, messages.links.title),
       jsx(
-        "ul",
-        {
-          css: {
-            listStyleType: "none",
-            paddingLeft: 0
-          }
-        },
+        "section",
+        null,
         links.map(link =>
           jsx(
-            "li",
+            "article",
             {
               key: JSON.stringify(link),
               css: {

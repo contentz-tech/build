@@ -1,4 +1,4 @@
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 const { memo } = require("react");
 const { Code } = require("./html/code");
 const Card = require("./card");

@@ -7,7 +7,7 @@ async function parseMDX(content) {
   return babel.transform(
     [
       `const React = require("react");`,
-      `const { css } = require("@emotion/core");`,
+      `const { css } = require("theme-ui");`,
       `const { MDXTag } = require("@mdx-js/tag");`,
       source
     ].join("\n"),

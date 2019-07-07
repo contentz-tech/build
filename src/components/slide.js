@@ -1,5 +1,5 @@
 const { Fragment } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 const { H1, H2, H3, H4, H5, H6 } = require("./html/heading");
 const { P, Blockquote, Anchor } = require("./html/text");
 const { Image, Figure } = require("./html/media");

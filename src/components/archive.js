@@ -1,10 +1,10 @@
-const { Fragment } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx, ThemeProvider } = require("theme-ui");
 const format = require("date-fns/format");
 
 const { Title, Description } = require("./lead");
 const Header = require("./header");
 const { useIntl } = require("./intl");
+const theme = require("../theme");
 
 function ArchivePage({ config = {}, articles = [] } = {}) {
   const { messages, language } = useIntl();
@@ -12,18 +12,19 @@ function ArchivePage({ config = {}, articles = [] } = {}) {
   const locale = require(`date-fns/locale/${language}`);
 
   return jsx(
-    Fragment,
-    null,
+    ThemeProvider,
+    { theme },
     jsx(Header, { ...config, messages }),
     jsx(
       "section",
       {
-        css: {
+        sx: {
           margin: "0 auto",
           maxWidth: "50em",
           "@media (max-width: 50em)": {
             boxSizing: "border-box",
-            padding: "0 1.5em"
+            py: 0,
+            px: 5
           }
         }
       },
@@ -34,24 +35,20 @@ function ArchivePage({ config = {}, articles = [] } = {}) {
         messages.archive.description.replace("${config.title}", config.title)
       ),
       jsx(
-        "ul",
-        {
-          css: {
-            listStyleType: "none",
-            paddingLeft: 0
-          }
-        },
+        "section",
+        null,
         articles
           .filter(article => article.published)
           .sort((a, b) => b.date - a.date)
           .map(article =>
             jsx(
-              "li",
+              "article",
               {
                 key: JSON.stringify(article),
-                css: {
-                  margin: "1em 0",
-                  fontSize: "1.25em",
+                sx: {
+                  my: 4,
+                  mx: 0,
+                  fontSize: 5,
                   display: "grid",
                   gridTemplateColumns: "1fr 3fr",
                   gridTemplateRows: "2",
@@ -73,20 +70,25 @@ function ArchivePage({ config = {}, articles = [] } = {}) {
                   "time",
                   {
                     dateTime: article.date.toJSON(),
-                    css: {
-                      fontWeight: "200",
-                      marginRight: "1em",
+                    sx: {
+                      fontWeight: "light",
+                      fontSize: 4,
+                      mr: 4,
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      alignItems: "flex-end",
                       gridArea: "date",
-                      textAlign: "right",
+                      "@media (max-width: 50em": {
+                        mr: 0,
+                      },
                       "@media (max-width: 50em) and (orientation: landscape)": {
-                        fontSize: "0.9em",
+                        fontsize: 2,
                         marginRight: "0",
-                        marginLeft: "1em"
+                        ml: 4
                       },
                       "@media (max-width: 50em) and (orientation: portrait)": {
                         display: "none",
-                        marginRight: "0",
-                        marginTop: "0.5em"
+                        mt: 3
                       }
                     }
                   },
@@ -94,14 +96,13 @@ function ArchivePage({ config = {}, articles = [] } = {}) {
                 ),
               jsx(
                 "h2",
-                { css: { gridArea: "title", margin: 0, fontSize: "1em" } },
+                { sx: { gridArea: "title", margin: 0, fontSize: 5 } },
                 jsx(
                   "a",
                   {
                     href: article.path.slice(1, article.path.indexOf(".mdx")),
-                    css: {
-                      color: "black",
-                      "@media (prefers-color-scheme: dark)": { color: "white" }
+                    sx: {
+                      color: "text"
                     }
                   },
                   article.title
@@ -110,7 +111,7 @@ function ArchivePage({ config = {}, articles = [] } = {}) {
               article.description &&
                 jsx(
                   "p",
-                  { css: { marginTop: "0.5em", gridArea: "description" } },
+                  { sx: { mt: 2, gridArea: "description" } },
                   article.description
                 )
             )

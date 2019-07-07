@@ -1,5 +1,4 @@
-const { Fragment } = require("react");
-const { jsx } = require("@emotion/core");
+const { jsx, ThemeProvider } = require("theme-ui");
 
 const { Title, Description } = require("./lead");
 const Header = require("./header");
@@ -12,6 +11,8 @@ const GitHub = require("./icons/github");
 const Dev = require("./icons/dev");
 const LinkedIn = require("./icons/linkedin");
 const Email = require("./icons/email");
+
+const theme = require("../theme");
 
 function formatURL({ name, value }) {
   switch (name.toLowerCase()) {
@@ -40,16 +41,11 @@ const Icon = props =>
     "i",
     {
       ...props,
-      css: {
+      sx: {
         svg: {
-          width: "32px",
-          height: "32px",
-          fill: "black",
-          "@media (max-width: 1000px) and (orientation: portrait)": {
-            width: "20px",
-            height: "20px"
-          },
-          "@media (prefers-color-scheme: dark)": { fill: "white" }
+          width: 5,
+          height: 5,
+          fill: "black"
         }
       }
     },
@@ -58,21 +54,21 @@ const Icon = props =>
 
 function HomePage({ config = {} } = {}) {
   return jsx(
-    Fragment,
-    null,
+    ThemeProvider,
+    { theme },
     jsx(Header, { ...config }),
     jsx(
       "section",
       {
-        css: {
+        sx: {
           boxSizing: "border-box",
-          fontSize: "1.25em",
+          fontSize: 4,
           minHeight: "calc(90vh - 58px)",
           margin: "10vh auto 0",
           maxWidth: "1000px",
           padding: "0 10vw 0",
           "@media (max-width: 1000px)": {
-            fontSize: "1em"
+            fontSize: 3
           },
           "@media (max-width: 1000px) and (orientation: landscape)": {
             marginBottom: "10vh"
@@ -92,11 +88,12 @@ function HomePage({ config = {} } = {}) {
                 key: name,
                 href: formatURL({ name, value }).link,
                 title: name,
-                css: {
+                sx: {
                   display: "inline-flex",
-                  color: "black",
+                  color: "text",
                   textDecoration: "none",
-                  margin: "0 .5em",
+                  my: 0,
+                  mx: 2,
                   ":first-of-type": {
                     marginLeft: 0
                   },
@@ -114,18 +111,18 @@ function HomePage({ config = {} } = {}) {
             "a",
             {
               href: `mailto:${config.email}`,
-              css: {
+              sx: {
                 display: "inline-flex",
-                color: "black",
+                color: "text",
                 textDecoration: "none",
-                margin: "0 .5em",
+                my: 0,
+                mx: 2,
                 ":first-of-type": {
                   marginLeft: 0
                 },
                 ":last-of-type": {
                   marginRight: 0
-                },
-                "@media (prefers-color-scheme: dark)": { color: "white" }
+                }
               }
             },
             jsx(Icon, null, jsx(Email))

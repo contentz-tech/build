@@ -1,6 +1,6 @@
 const { join, parse } = require("path");
 const { minify } = require("terser");
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 
 const { makeDir, writeFile } = require("./fs");
 const { checkCache } = require("./cache");

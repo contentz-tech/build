@@ -1,8 +1,8 @@
-const { jsx } = require("@emotion/core");
+const { jsx, Styled } = require("theme-ui");
 const Card = require("../card");
 
 exports.Image = props => {
-  const img = jsx("img", {
+  const img = jsx(Styled.img, {
     ...props,
     loading: "lazy",
     css: {

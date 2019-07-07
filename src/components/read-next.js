@@ -1,4 +1,4 @@
-const { jsx } = require("@emotion/core");
+const { jsx } = require("theme-ui");
 
 const { Anchor } = require("./html/text");
 const Card = require("./card");
