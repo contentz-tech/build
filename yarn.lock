@@ -1588,10 +1588,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@mdx-js/mdx@1.0.26":
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.0.26.tgz#948a9df8b3e1fcbce896a20be2d57bec6921c875"
-  integrity sha512-9BQ2vqqF2WSqB0JCypokbq6+felUlJlP4xEAEFLBIjjINp/38+JjmJvWp7BbjKFg1k4U8wWnxUBqKpXKXsH99A==
+"@mdx-js/mdx@1.0.27":
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.0.27.tgz#a027ea67d0dfeb9156228e4fa2e42010f7bb7481"
+  integrity sha512-75Pd2oUSn8Oa/WWF4hpexG7e9e7Iz3RGgYr2ctxX2qwSsiU2CMWn0uhFLsAiv5Ycn1JcTsyUhYCX2AO6MfHezA==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
