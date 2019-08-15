@@ -52,7 +52,7 @@
     "del": "5.0.0",
     "emotion": "10.0.14",
     "emotion-server": "10.0.14",
-    "execa": "2.0.3",
+    "execa": "2.0.4",
     "get-hrefs": "4.0.0",
     "globby": "10.0.1",
     "gray-matter": "4.0.2",
