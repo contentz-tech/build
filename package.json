@@ -48,7 +48,7 @@
     "chalk": "2.4.2",
     "cli-prompt": "0.6.0",
     "cpy": "7.3.0",
-    "date-fns": "2.0.0",
+    "date-fns": "2.0.1",
     "del": "5.1.0",
     "emotion": "10.0.14",
     "emotion-server": "10.0.14",
