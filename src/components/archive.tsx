@@ -5,11 +5,12 @@ import format from "date-fns/format";
 import { Title, Description } from "./lead";
 import Header from "./header";
 import { useState } from "./state";
+import { loadLocale } from "../utils/load-locale";
 
 function ArchivePage() {
   const state = useState();
 
-  const locale: any = require(`date-fns/locale/${state.config.language}`);
+  const locale: any = loadLocale(state.config.language);
 
   return (
     <Fragment>
@@ -76,7 +77,7 @@ function ArchivePage() {
                       }
                     }}
                   >
-                    {format(article.date, "MMMM DD, YYYY", { locale })}
+                    {format(article.date, "MMMM dd, yyyy", { locale })}
                   </time>
                 )}
                 <h2 css={{ gridArea: "title", margin: 0, fontSize: "1em" }}>

@@ -5,10 +5,11 @@ import format from "date-fns/format";
 import { Title } from "./lead";
 import Header from "./header";
 import { useState } from "./state";
+import { loadLocale } from "../utils/load-locale";
 
 function SlidesPage() {
   const state = useState();
-  const locale = require(`date-fns/locale/${state.config.language}`);
+  const locale = loadLocale(state.config.language);
 
   return (
     <Fragment>
@@ -51,7 +52,7 @@ function SlidesPage() {
               >
                 {slide.date && (
                   <time dateTime={slide.date.toJSON()}>
-                    {format(slide.date, "MMMM DD, YYYY", { locale })}
+                    {format(slide.date, "MMMM dd, yyyy", { locale })}
                   </time>
                 )}
                 <h2 css={{ gridArea: "title", margin: 0, fontSize: "1em" }}>

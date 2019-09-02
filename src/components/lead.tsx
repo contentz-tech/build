@@ -1,6 +1,7 @@
 import { jsx } from "@emotion/core";
 import format from "date-fns/format";
 import { useState } from "./state";
+import { loadLocale } from "../utils/load-locale";
 
 function Title(props: {
   children: JSX.Element[] | JSX.Element | string | undefined;
@@ -41,7 +42,7 @@ function Description(props: {
 function Date(props: { date: Date }) {
   const state = useState();
 
-  const locale = require(`date-fns/locale/${state.config.language}`);
+  const locale = loadLocale(state.config.language);
 
   return (
     <time
@@ -52,7 +53,7 @@ function Date(props: { date: Date }) {
         bottom: "100%"
       }}
     >
-      <strong>{format(props.date, "MMMM DD, YYYY", { locale })}</strong>
+      <strong>{format(props.date, "MMMM dd, yyyy", { locale })}</strong>
     </time>
   );
 }
