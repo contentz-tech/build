@@ -1,11 +1,21 @@
 {
-  "extends": ["prettier", "prettier/react"],
-  "plugins": ["prettier", "react"],
+  "extends": [
+    "react-app",
+    "plugin:unicorn/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/unicorn",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["prettier", "react", "unicorn", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018
+    "project": "./tsconfig.json"
   },
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   }
 }
