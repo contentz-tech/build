@@ -15,7 +15,7 @@
   "lead": { "postedOn": "Publicado el " },
   "error": {
     "title": "Error 404",
-    "description": "La página o artículo que intentaste acceder no existe",
+    "description": "La página, artículo o charla que intentaste acceder no existe",
     "goHome": "Volver al inicio",
     "goArticles": "Ir a la lista de artículos",
     "goLinks": "Ir a la lista de enlaces compartidos",
