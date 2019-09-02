@@ -15,7 +15,7 @@
   "lead": { "postedOn": "Posted on " },
   "error": {
     "title": "Error 404",
-    "description": "The page or article you have tried to access was not found",
+    "description": "The page, article or slide you have tried to access was not found",
     "goHome": "Go to the Home",
     "goArticles": "Go to the list of Articles",
     "goLinks": "Go to the list of Shared Links",

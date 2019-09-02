@@ -3,7 +3,7 @@ const meow = require("meow");
 const chalk = require("chalk");
 
 const pkg = require("./package.json");
-const command = require("./src/index.js");
+const command = require("./dist/index.js");
 
 async function main() {
   const cli = meow(
