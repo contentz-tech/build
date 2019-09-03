@@ -14,6 +14,7 @@ function logState(state: IState): string {
   Pages ${chalk.bold.cyan(state.pages.order.length.toString())}
   Links ${chalk.bold.cyan(state.links.length.toString())}
   Statics ${chalk.bold.cyan(state.statics.length.toString())}
+  Resume ${chalk.bold.cyan(state.resume ? "Yes" : "No")}
 `;
 }
 
