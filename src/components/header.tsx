@@ -59,6 +59,9 @@ function Header() {
           {state.slides.order.length > 0 && (
             <Anchor href="/slides/">{state.i18n.header.slides}</Anchor>
           )}
+          {state.resume && (
+            <Anchor href="/cv/">{state.i18n.header.resume}</Anchor>
+          )}
           {state.config.navigation &&
             state.config.navigation.map(({ name, path }) => (
               <Anchor
