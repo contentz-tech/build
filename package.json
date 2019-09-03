@@ -75,7 +75,7 @@
     "resume-schema": "^0.0.18",
     "rimraf": "^3.0.0",
     "term-size": "^2.1.0",
-    "terser": "4.1.4"
+    "terser": "4.2.1"
   },
   "devDependencies": {
     "@types/babel-core": "^6.25.6",
