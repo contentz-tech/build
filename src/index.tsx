@@ -54,7 +54,7 @@ function LogState({ state }: { state?: IState }) {
         </Box>
       ) : (
         <Box>
-          Pages <Color cyan>{Object.keys(state.articles.byPath).length}</Color>
+          Pages <Color cyan>{Object.keys(state.pages.byPath).length}</Color>
         </Box>
       )}
       {!hasLinks ? (
