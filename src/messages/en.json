@@ -9,7 +9,8 @@
     "mainLinkDescription": "Go back to articles list",
     "articles": "Articles",
     "links": "Links",
-    "slides": "Talks"
+    "slides": "Talks",
+    "resume": "CV"
   },
   "footer": { "editOnGitHub": "Edit it on GitHub" },
   "lead": { "postedOn": "Posted on " },

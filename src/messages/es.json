@@ -9,7 +9,8 @@
     "mainLinkDescription": "Volver a la lista de artículos",
     "articles": "Artículos",
     "links": "Enlaces",
-    "slides": "Charlas"
+    "slides": "Charlas",
+    "resume": "CV"
   },
   "footer": { "editOnGitHub": "Editar en GitHub" },
   "lead": { "postedOn": "Publicado el " },
