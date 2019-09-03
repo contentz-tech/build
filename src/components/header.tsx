@@ -12,7 +12,10 @@ function Header() {
         background: "white",
         borderBottom: "1px solid #eaeaea",
         boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.12)",
-        padding: "1em 0"
+        padding: "1em 0",
+        "@media print": {
+          display: "none"
+        }
       }}
     >
       <div
