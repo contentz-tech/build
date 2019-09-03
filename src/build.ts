@@ -10,6 +10,7 @@ import { builder as feed } from "./builders/feed";
 import { builder as home } from "./builders/home";
 import { builder as links } from "./builders/links";
 import { builder as pages } from "./builders/pages";
+import { builder as resume } from "./builders/resume";
 import { builder as robots } from "./builders/robots";
 import { builder as sitemap } from "./builders/sitemap";
 import { builder as slides } from "./builders/slides";
@@ -31,6 +32,7 @@ async function build(state: IState): Promise<void> {
         home(state),
         links(state),
         pages(state),
+        resume(state),
         slides(state)
       ]),
       await Promise.all([
