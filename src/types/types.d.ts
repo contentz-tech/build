@@ -16,7 +16,21 @@ declare module "@babel/core" {
 }
 
 declare module "parse-url" {
-  export default function parse(content: string): any;
+  export default function parse(
+    url: string,
+    normalize?: boolean | object
+  ): {
+    protocols: string[];
+    protocol: string;
+    port?: number;
+    resource: string;
+    user: string;
+    pathname: string;
+    hash: string;
+    search: string;
+    href: string;
+    query: string;
+  };
 }
 
 declare module "markdown-toc" {
