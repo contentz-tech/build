@@ -4,7 +4,7 @@ import { jsx } from "@emotion/core";
 import { render } from "../utils/render";
 import { IState } from "../state";
 import { check } from "../utils/cache";
-import { writeFile, makeDir } from "../utils/fs";
+import { writeFile, makeDir, del } from "../utils/fs";
 import { parseMDX } from "../utils/parse-mdx";
 
 import LayoutPage from "../components/layout";
@@ -69,6 +69,9 @@ function articleBuilder(state: IState) {
 }
 
 async function archiveBuilder(state: IState) {
+  if (state.articles.order.length === 0) {
+    return await del("public/articles/index.html");
+  }
   const html = await render(
     <Document path="archive.mdx">
       <Archive />
@@ -80,7 +83,7 @@ async function archiveBuilder(state: IState) {
     resolve("./public/articles/index.html"),
     `<!DOCTYPE html>${html}`,
     "utf8"
-  )
+  );
 }
 
 async function builder(state: IState) {
