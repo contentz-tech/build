@@ -22,15 +22,13 @@ async function main() {
     clear();
     console.log("");
     console.log(chalk.bold.green("Contentz\n"));
-    console.log(
-      chalk.bold.green("📋 Reading project state from file system.\n")
-    );
+    console.log(chalk.bold.green("Reading project state from file system.\n"));
     const state: IState = await getState();
     console.log(logState(state));
-    console.log(chalk.bold.green("⚡️ Building an optimized website.\n"));
+    console.log(chalk.bold.green("Building an optimized website.\n"));
     await build(state);
     console.log(
-      chalk.bold.green("✅ Website built, try it with `npx serve public`.\n")
+      chalk.bold.green("Website built, try it with `npx serve public`.\n")
     );
   } catch (error) {
     console.error("=".repeat(termSize().columns) + "\n");
