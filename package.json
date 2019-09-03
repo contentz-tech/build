@@ -52,7 +52,7 @@
     "cpy": "7.3.0",
     "date-fns": "2.0.1",
     "del": "5.1.0",
-    "emotion": "10.0.14",
+    "emotion": "10.0.17",
     "emotion-server": "10.0.14",
     "execa": "2.0.3",
     "fast-glob": "^3.0.4",
