@@ -1,19 +1,21 @@
-import { IConfig, config as getConfig } from "./getters/config";
 import { articles, IArticles } from "./getters/articles";
-import { pages, IPages } from "./getters/pages";
-import { slides, ISlides } from "./getters/slides";
-import { links, ILink } from "./getters/links";
-import { statics } from "./getters/statics";
+import { IConfig, config as getConfig } from "./getters/config";
 import { i18n } from "./getters/i18n";
+import { links, ILink } from "./getters/links";
+import { pages, IPages } from "./getters/pages";
+import { resume, IResume } from "./getters/resume";
+import { slides, ISlides } from "./getters/slides";
+import { statics } from "./getters/statics";
 
 interface IState {
-  config: IConfig;
   articles: IArticles;
-  pages: IPages;
-  slides: ISlides;
-  links: ILink[];
-  statics: string[];
+  config: IConfig;
   i18n: any;
+  links: ILink[];
+  pages: IPages;
+  resume?: IResume;
+  slides: ISlides;
+  statics: string[];
 }
 
 async function getState(): Promise<IState> {
@@ -25,7 +27,8 @@ async function getState(): Promise<IState> {
     slides: await slides(config),
     links: await links(),
     statics: await statics(),
-    i18n: await i18n(config)
+    i18n: await i18n(config),
+    resume: await resume(),
   };
 }
 
