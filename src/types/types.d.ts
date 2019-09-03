@@ -40,3 +40,18 @@ declare module "markdown-toc" {
 declare module "get-hrefs" {
   export default function getHrefs(content: string): string[];
 }
+
+declare module "resume-schema" {
+  interface SchemaError {
+    code: string;
+    params: string[];
+    message: string;
+    path: string;
+    description: string;
+  }
+
+  export function validate(
+    scheme: any,
+    callback: (errors: SchemaError[]) => void
+  ): void;
+}
