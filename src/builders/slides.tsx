@@ -2,7 +2,7 @@ import { jsx } from "@emotion/core";
 import { render } from "../utils/render";
 import { IState } from "../state";
 import { check } from "../utils/cache";
-import { writeFile, makeDir } from "../utils/fs";
+import { writeFile, makeDir, del } from "../utils/fs";
 import { parseMDX } from "../utils/parse-mdx";
 import SlidePage from "../components/slide";
 import Document from "../components/document";
@@ -30,7 +30,11 @@ async function checkCache(state: IState): Promise<boolean> {
   return caches.reduce((prev, next) => next === prev, true);
 }
 
-async function slideScriptBuilder() {
+async function slideScriptBuilder(state: IState) {
+  if (state.slides.order.length === 0) {
+    return await del("public/slide.js");
+  }
+
   await writeFile(
     "./public/slide.js",
     minify(
@@ -96,6 +100,9 @@ function slideBuilder(state: IState) {
 }
 
 async function slideListBuilder(state: IState) {
+  if (state.slides.order.length === 0) {
+    return await del("public/slides/index.html");
+  }
   const html = await render(
     <Document path="slides.mdx">
       <SlidesPage />
@@ -118,7 +125,7 @@ async function builder(state: IState) {
   await Promise.all(
     Object.values(state.slides.byPath)
       .map(slideBuilder(state))
-      .concat(slideScriptBuilder())
+      .concat(slideScriptBuilder(state))
       .concat(slideListBuilder(state))
   );
 }
