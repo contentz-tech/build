@@ -40,7 +40,7 @@
     "pretty": "prettier --check 'src/**/*.js'"
   },
   "dependencies": {
-    "@babel/core": "7.5.5",
+    "@babel/core": "7.6.0",
     "@babel/preset-env": "7.5.5",
     "@emotion/babel-preset-css-prop": "10.0.17",
     "@emotion/core": "10.0.15",
