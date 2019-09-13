@@ -67,7 +67,7 @@
     "mkdirp": "0.5.1",
     "open-editor": "2.0.1",
     "parse-url": "5.0.1",
-    "puppeteer-core": "1.19.0",
+    "puppeteer-core": "1.20.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-slugify": "1.2.0",
