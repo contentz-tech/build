@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Ordered 1`] = `
+<DocumentFragment>
+  .emotion-3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin-left: -2rem;
+  padding-left: 2rem;
+}
+
+@media (max-width:767px) {
+  .emotion-3 {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+}
+
+.emotion-3 ol {
+  padding-left: 3.25rem;
+}
+
+.emotion-0 {
+  line-height: 1.3;
+}
+
+<ol
+    class="emotion-3"
+  >
+    <li
+      class="emotion-0"
+    >
+      Item 1
+    </li>
+    <li
+      class="emotion-0"
+    >
+      Item 2
+    </li>
+    <li
+      class="emotion-0"
+    >
+      Item 3
+    </li>
+  </ol>
+</DocumentFragment>
+`;
+
+exports[`List Unordered 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  line-height: 1.3;
+}
+
+.emotion-3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin-left: -2rem;
+  padding-left: 2rem;
+  list-style-type: square;
+}
+
+@media (max-width:767px) {
+  .emotion-3 {
+    margin-left: 0;
+    padding-left: 2rem;
+  }
+}
+
+.emotion-3 ul {
+  padding-left: 3.25rem;
+}
+
+<ul
+    class="emotion-3"
+  >
+    <li
+      class="emotion-0"
+    >
+      Item 1
+    </li>
+    <li
+      class="emotion-0"
+    >
+      Item 2
+    </li>
+    <li
+      class="emotion-0"
+    >
+      Item 3
+    </li>
+  </ul>
+</DocumentFragment>
+`;
