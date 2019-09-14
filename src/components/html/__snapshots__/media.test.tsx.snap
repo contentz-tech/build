@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Media Image with Figure 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.emotion-3 {
+  box-shadow: rgba(0,0,0,0.12) 0px 2px 5px 0px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 1.5em -2em 3em;
+  padding: 1em 2em;
+}
+
+@media (max-width:720px) {
+  .emotion-3 {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1em 0.5em;
+  }
+}
+
+.emotion-2 {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.emotion-1 {
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 1em;
+  color: rgba(0,0,0,0.7);
+}
+
+<div
+    class="emotion-3"
+  >
+    <figure
+      class="emotion-2"
+    >
+      <img
+        alt="User avatar"
+        class="emotion-0"
+        loading="lazy"
+        src="/static/avatar.png"
+        title="My Avatar"
+      />
+      <figcaption
+        class="emotion-1"
+      >
+        My Avatar
+      </figcaption>
+    </figure>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Media Image without Figure 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+<img
+    alt="User avatar"
+    class="emotion-0"
+    loading="lazy"
+    src="/static/avatar.png"
+  />
+</DocumentFragment>
+`;
