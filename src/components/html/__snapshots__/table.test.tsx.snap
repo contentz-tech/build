@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Table with Header 1`] = `
+<DocumentFragment>
+  .emotion-6 {
+  font-size: 1em;
+  width: 100%;
+}
+
+.emotion-2 {
+  padding: 5px;
+}
+
+.emotion-3 {
+  padding: 5px;
+}
+
+.emotion-0 {
+  padding: 5px;
+  color: #9b9b9b;
+  font-style: oblique;
+  font-weight: normal;
+  text-align: left;
+}
+
+<table
+    class="emotion-6"
+  >
+    <thead>
+      <tr
+        class="emotion-2"
+      >
+        <th
+          class="emotion-0"
+        >
+          First name
+        </th>
+        <th
+          class="emotion-0"
+        >
+          Last name
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="emotion-2"
+      >
+        <td
+          class="emotion-3"
+        >
+          Sergio
+        </td>
+        <td
+          class="emotion-3"
+        >
+          Xalambrí
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Table Table without Header 1`] = `
+<DocumentFragment>
+  .emotion-3 {
+  font-size: 1em;
+  width: 100%;
+}
+
+.emotion-2 {
+  padding: 5px;
+}
+
+.emotion-0 {
+  padding: 5px;
+}
+
+<table
+    class="emotion-3"
+  >
+    <tbody>
+      <tr
+        class="emotion-2"
+      >
+        <td
+          class="emotion-0"
+        >
+          Sergio
+        </td>
+        <td
+          class="emotion-0"
+        >
+          Xalambrí
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
