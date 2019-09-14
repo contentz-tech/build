@@ -41,7 +41,9 @@
     "pretty": "prettier --check 'src/**/*.js'"
   },
   "dependencies": {
+    "@mdx-js/tag": "^0.20.3",
     "chalk": "2.4.2",
+    "date-fns": "^2.2.1",
     "meow": "5.0.0"
   },
   "devDependencies": {
@@ -50,7 +52,6 @@
     "@emotion/babel-preset-css-prop": "10.0.17",
     "@emotion/core": "10.0.17",
     "@mdx-js/mdx": "0.17.5",
-    "@mdx-js/tag": "0.20.3",
     "@types/babel-core": "^6.25.6",
     "@types/clear": "^0.1.0",
     "@types/mkdirp": "^0.5.2",
@@ -62,7 +63,6 @@
     "@zeit/ncc": "^0.20.4",
     "babel-eslint": "^10.0.3",
     "cpy": "7.3.0",
-    "date-fns": "2.2.1",
     "del": "5.1.0",
     "emotion": "10.0.17",
     "emotion-server": "10.0.17",
