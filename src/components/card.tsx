@@ -2,7 +2,7 @@ import { jsx } from "@emotion/core";
 
 interface CardProps {
   selectable?: boolean;
-  children: JSX.Element[] | JSX.Element;
+  children: JSX.Element[] | JSX.Element | string;
 }
 
 function Card({ selectable = false, children }: CardProps) {
