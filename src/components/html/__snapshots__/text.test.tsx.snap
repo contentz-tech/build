@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Anchor External 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<a
+    class="emotion-0"
+    href="https://contentz.tech"
+    rel="nofollow noopener"
+    target="_blank"
+  >
+    Contentz.tech
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Text Anchor Internal 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<a
+    class="emotion-0"
+    href="/"
+    target="_self"
+  >
+    Go to home
+  </a>
+</DocumentFragment>
+`;
+
+exports[`Text Blockquote 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  border-left: 3px solid black;
+  box-sizing: border-box;
+  padding-left: calc(2em - 3px);
+  margin-left: -2em;
+  margin-right: 0;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.emotion-0 P {
+  margin: 0;
+}
+
+<blockquote
+    class="emotion-0"
+  >
+    This is a test of a paragraph rendered by Contentz.
+  </blockquote>
+</DocumentFragment>
+`;
+
+exports[`Text Paragraph 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+<p
+    class="emotion-0"
+  >
+    This is a test of a paragraph rendered by Contentz.
+  </p>
+</DocumentFragment>
+`;
