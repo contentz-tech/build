@@ -1,0 +1,12 @@
+---
+title: Contentz Test
+incremental: false
+navigation:
+  - name: About
+    path: /about/
+social:
+  github: sergiodxa/contentz
+repository: https://github.com/contentz-tech/website
+domain: https://contentz.tech
+description: Create Content, Get a Highly Optimized Website
+patreon: sergiodxa
