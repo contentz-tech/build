@@ -1,4 +1,10 @@
 dev:
 	yarn build
-	cd example && node ../cli.js
+	make build
 	npx serve example/public
+test:
+	yarn build
+	make build
+	yarn test
+build:
+	cd example && node ../cli.js
