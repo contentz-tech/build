@@ -1,8 +1,8 @@
 import { jsx } from "@emotion/core";
 import slugify from "react-slugify";
 
-const H1 = (props: any) =>
-  jsx("h1", {
+function H1(props: any) {
+  return jsx("h1", {
     css: {
       fontSize: "2.25em",
       fontWeight: "normal",
@@ -12,9 +12,10 @@ const H1 = (props: any) =>
     id: slugify(jsx("h1", props)),
     ...props
   });
+}
 
-const H2 = (props: any) =>
-  jsx("h2", {
+function H2(props: any) {
+  return jsx("h2", {
     css: {
       fontSize: "2em",
       fontWeight: "normal",
@@ -23,9 +24,10 @@ const H2 = (props: any) =>
     id: slugify(jsx("h2", props)),
     ...props
   });
+}
 
-const H3 = (props: any) =>
-  jsx("h3", {
+function H3(props: any) {
+  return jsx("h3", {
     css: {
       fontSize: "1.75em",
       fontWeight: "normal",
@@ -34,9 +36,10 @@ const H3 = (props: any) =>
     id: slugify(jsx("h3", props)),
     ...props
   });
+}
 
-const H4 = (props: any) =>
-  jsx("h4", {
+function H4(props: any) {
+  return jsx("h4", {
     css: {
       fontSize: "1.5em",
       fontWeight: "normal",
@@ -45,9 +48,10 @@ const H4 = (props: any) =>
     id: slugify(jsx("h4", props)),
     ...props
   });
+}
 
-const H5 = (props: any) =>
-  jsx("h5", {
+function H5(props: any) {
+  return jsx("h5", {
     css: {
       fontSize: "1.25em",
       fontWeight: "normal",
@@ -56,9 +60,10 @@ const H5 = (props: any) =>
     id: slugify(jsx("h5", props)),
     ...props
   });
+}
 
-const H6 = (props: any) =>
-  jsx("h6", {
+function H6(props: any) {
+  return jsx("h6", {
     css: {
       fontSize: "1.125em",
       fontWeight: "normal",
@@ -67,5 +72,6 @@ const H6 = (props: any) =>
     id: slugify(jsx("h6", props)),
     ...props
   });
+}
 
 export { H1, H2, H3, H4, H5, H6 };
