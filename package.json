@@ -49,11 +49,16 @@
   "devDependencies": {
     "@babel/core": "7.6.0",
     "@babel/preset-env": "7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@emotion/babel-preset-css-prop": "10.0.17",
     "@emotion/core": "10.0.17",
     "@mdx-js/mdx": "0.17.5",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
     "@types/babel-core": "^6.25.6",
     "@types/clear": "^0.1.0",
+    "@types/jest": "^24.0.18",
     "@types/mkdirp": "^0.5.2",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
@@ -80,6 +85,7 @@
     "gray-matter": "4.0.2",
     "ink": "^2.3.0",
     "jest": "^24.9.0",
+    "jest-emotion": "^10.0.17",
     "jest-puppeteer": "^4.3.0",
     "lint-staged": "9.2.5",
     "mkdirp": "0.5.1",
@@ -115,6 +121,9 @@
     ]
   },
   "jest": {
-    "preset": "jest-puppeteer"
+    "preset": "jest-puppeteer",
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
   }
 }
