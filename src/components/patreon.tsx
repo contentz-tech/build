@@ -5,6 +5,9 @@ import { useState } from "./state";
 
 function Patreon() {
   const state = useState();
+
+  if (!state.config.patreon) return null;
+
   return (
     <p css={{ margin: 0 }}>
       {state.i18n.patreon.first} <br />{" "}
