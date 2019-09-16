@@ -6,11 +6,13 @@ import Card from "./card";
 import { useState } from "./state";
 
 interface CanonicalURLProps {
-  value: string;
+  value?: string;
 }
 
 function CanonicalURL({ value }: CanonicalURLProps) {
   const state = useState();
+
+  if (!value) return null;
 
   return (
     <Card>
