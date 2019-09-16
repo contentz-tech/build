@@ -73,7 +73,7 @@ describe("Footer", () => {
     );
   });
 
-  test("With Patreon", () => {
+  test("Only Patreon", () => {
     const { asFragment, getByText } = render(
       <StateProvider state={{ ...baseState, config: { patreon: "sergiodxa" } }}>
         <Footer />

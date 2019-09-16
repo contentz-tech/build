@@ -129,6 +129,87 @@ exports[`Footer Complete 1`] = `
 
 exports[`Footer Empty 1`] = `<DocumentFragment />`;
 
+exports[`Footer Only Patreon 1`] = `
+<DocumentFragment>
+  .emotion-4 {
+  background: white;
+  border-top: 1px solid #eaeaea;
+  padding: 2em 0;
+  margin-top: 3em;
+}
+
+.emotion-3 {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width:60rem) and (orientation:portrait) {
+  .emotion-3 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 2em;
+  }
+}
+
+@media (max-width:60rem) and (orientation:landscape) {
+  .emotion-3 {
+    padding: 0 2em;
+  }
+}
+
+.emotion-2 {
+  fontsize: 0.9em;
+}
+
+.emotion-1 {
+  margin: 0;
+}
+
+.emotion-0 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<footer
+    class="emotion-4"
+  >
+    <div
+      class="emotion-3"
+    >
+      <div
+        class="emotion-2"
+      >
+        <p
+          class="emotion-1"
+        >
+          Do you like my content? 
+          <br />
+           
+          <a
+            class="emotion-0"
+            href="https://patreon.com/sergiodxa"
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            Become a Patreon and help me continue writing!
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
+
 exports[`Footer Only Repository 1`] = `
 <DocumentFragment>
   .emotion-3 {
@@ -218,87 +299,6 @@ exports[`Footer Only Repository 1`] = `
           </svg>
         </i>
       </a>
-    </div>
-  </footer>
-</DocumentFragment>
-`;
-
-exports[`Footer With Patreon 1`] = `
-<DocumentFragment>
-  .emotion-4 {
-  background: white;
-  border-top: 1px solid #eaeaea;
-  padding: 2em 0;
-  margin-top: 3em;
-}
-
-.emotion-3 {
-  max-width: 60rem;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-@media (max-width:60rem) and (orientation:portrait) {
-  .emotion-3 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 0 2em;
-  }
-}
-
-@media (max-width:60rem) and (orientation:landscape) {
-  .emotion-3 {
-    padding: 0 2em;
-  }
-}
-
-.emotion-2 {
-  fontsize: 0.9em;
-}
-
-.emotion-1 {
-  margin: 0;
-}
-
-.emotion-0 {
-  color: #004BCC;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-<footer
-    class="emotion-4"
-  >
-    <div
-      class="emotion-3"
-    >
-      <div
-        class="emotion-2"
-      >
-        <p
-          class="emotion-1"
-        >
-          Do you like my content? 
-          <br />
-           
-          <a
-            class="emotion-0"
-            href="https://patreon.com/sergiodxa"
-            rel="nofollow noopener"
-            target="_blank"
-          >
-            Become a Patreon and help me continue writing!
-          </a>
-        </p>
-      </div>
     </div>
   </footer>
 </DocumentFragment>
