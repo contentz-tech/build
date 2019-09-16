@@ -16,7 +16,7 @@ describe("Card", () => {
       .toHaveStyle("user-select: none");
   });
 
-  test("Non Selectable", () => {
+  test("Selectable", () => {
     const { asFragment, getByText } = render(
       <Card selectable>This is the content of the card.</Card>
     );

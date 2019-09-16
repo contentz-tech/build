@@ -33,7 +33,7 @@ exports[`Card Non Selectable 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Card Non Selectable 2`] = `
+exports[`Card Selectable 1`] = `
 <DocumentFragment>
   .emotion-0 {
   box-shadow: rgba(0,0,0,0.12) 0px 2px 5px 0px;
