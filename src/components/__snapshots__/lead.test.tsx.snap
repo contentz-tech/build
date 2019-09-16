@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lead Date 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  position: absolute;
+  right: 0.5em;
+  bottom: 100%;
+}
+
+<time
+    class="emotion-0"
+    datetime="2019-09-15T00:12:57.350Z"
+  >
+    <strong>
+      September 14, 2019
+    </strong>
+  </time>
+</DocumentFragment>
+`;
+
+exports[`Lead Description 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  border-left: 3px solid black;
+  box-sizing: border-box;
+  padding-left: calc(0.5em - 3px);
+  margin: -1em 0 1em -0.5em;
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+<p
+    class="emotion-0"
+  >
+    Create Content, Get a Highly Optimized Website
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Lead Title 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  font-size: 2.25em;
+  font-weight: bold;
+  -webkit-letter-spacing: -0.028em;
+  -moz-letter-spacing: -0.028em;
+  -ms-letter-spacing: -0.028em;
+  letter-spacing: -0.028em;
+  margin: 1em 0;
+}
+
+<h1
+    class="emotion-0"
+  >
+    Contentz.tech
+  </h1>
+</DocumentFragment>
+`;
