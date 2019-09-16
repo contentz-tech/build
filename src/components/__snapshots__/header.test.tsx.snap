@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Complete 1`] = `
+<DocumentFragment>
+  .emotion-9 {
+  background: white;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.12);
+  padding: 1em 0;
+}
+
+@media print {
+  .emotion-9 {
+    display: none;
+  }
+}
+
+.emotion-8 {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width:60rem) {
+  .emotion-8 {
+    padding: 0 1em;
+  }
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  white-space: nowrap;
+  color: black;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme:dark) {
+  .emotion-0 {
+    color: white;
+  }
+}
+
+.emotion-7 {
+  overflow-x: auto;
+  margin: -1em 0;
+  padding: 1em 0;
+}
+
+.emotion-7 a {
+  padding: 0 1em;
+}
+
+.emotion-1 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<header
+    class="emotion-9"
+  >
+    <div
+      class="emotion-8"
+    >
+      <a
+        class="emotion-0"
+        href="/"
+        title="Go back the home page"
+      >
+        Contentz
+      </a>
+      <nav
+        class="emotion-7"
+      >
+        <a
+          class="emotion-1"
+          href="/articles/"
+          target="_self"
+        >
+          Articles
+        </a>
+        <a
+          class="emotion-1"
+          href="/links/"
+          target="_self"
+        >
+          Links
+        </a>
+        <a
+          class="emotion-1"
+          href="/slides/"
+          target="_self"
+        >
+          Talks
+        </a>
+        <a
+          class="emotion-1"
+          href="/cv/"
+          target="_self"
+        >
+          CV
+        </a>
+        <a
+          class="emotion-1"
+          href="/about/"
+          target="_self"
+        >
+          About
+        </a>
+        <a
+          class="emotion-1"
+          href="https://leanpub.com/u/sergiodxa/"
+          rel="nofollow noopener"
+          target="_blank"
+        >
+          Books
+        </a>
+      </nav>
+    </div>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Header Empty 1`] = `<DocumentFragment />`;
+
+exports[`Header Only Title 1`] = `
+<DocumentFragment>
+  .emotion-2 {
+  background: white;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.12);
+  padding: 1em 0;
+}
+
+@media print {
+  .emotion-2 {
+    display: none;
+  }
+}
+
+.emotion-1 {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (max-width:60rem) {
+  .emotion-1 {
+    padding: 0 1em;
+  }
+}
+
+.emotion-0 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  white-space: nowrap;
+  color: black;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme:dark) {
+  .emotion-0 {
+    color: white;
+  }
+}
+
+<header
+    class="emotion-2"
+  >
+    <div
+      class="emotion-1"
+    >
+      <a
+        class="emotion-0"
+        href="/"
+        title="Go back the home page"
+      >
+        Contentz
+      </a>
+    </div>
+  </header>
+</DocumentFragment>
+`;
