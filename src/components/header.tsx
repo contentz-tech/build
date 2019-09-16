@@ -13,6 +13,8 @@ function Header() {
     Boolean(state.resume) ||
     (state.config.navigation && state.config.navigation.length > 0);
 
+  if (!Boolean(state.config.title) && !hasNavigation) return null;
+
   return (
     <header
       css={{
