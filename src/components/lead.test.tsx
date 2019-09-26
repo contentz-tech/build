@@ -1,5 +1,5 @@
 /** * @jest-environment jsdom */
-import '@testing-library/jest-dom/extend-expect'
+import "@testing-library/jest-dom/extend-expect";
 import { jsx } from "@emotion/core";
 import { render } from "@testing-library/react";
 import { Title, Description, Date as DateTime } from "./lead";
@@ -27,12 +27,12 @@ const state = {
       link: "Become a Patreon and help me continue writing!"
     }
   }
-}
+};
 
 describe("Lead", () => {
   test("Title", () => {
     const { asFragment, getByText } = render(<Title>Contentz.tech</Title>);
-    
+
     expect(asFragment()).toMatchSnapshot();
     expect(getByText(/Contentz.tech/)).toBeInTheDocument();
   });
@@ -41,10 +41,11 @@ describe("Lead", () => {
     const { asFragment, getByText } = render(
       <Description>Create Content, Get a Highly Optimized Website</Description>
     );
-    
+
     expect(asFragment()).toMatchSnapshot();
-    expect(getByText(/Create Content, Get a Highly Optimized Website/))
-      .toBeInTheDocument();
+    expect(
+      getByText(/Create Content, Get a Highly Optimized Website/)
+    ).toBeInTheDocument();
   });
 
   test("Date", () => {
