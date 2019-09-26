@@ -37,8 +37,8 @@
   "scripts": {
     "build": "ncc build src/index.tsx -o dist",
     "test": "jest",
-    "lint": "eslint 'src/**/*.js'",
-    "pretty": "prettier --check 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.ts' 'src/**/*.tsx'",
+    "pretty": "prettier --check 'src/**/*.ts' 'src/**/*.tsx'"
   },
   "dependencies": {
     "@mdx-js/tag": "^0.20.3",
@@ -102,7 +102,7 @@
     "serve-handler": "^6.1.1",
     "term-size": "^2.1.0",
     "terser": "4.3.1",
-    "test-listen": "^1.1.0"
+    "typescript": "^3.6.3"
   },
   "husky": {
     "hooks": {
