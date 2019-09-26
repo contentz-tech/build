@@ -38,7 +38,8 @@
     "build": "ncc build src/index.tsx -o dist",
     "test": "jest",
     "lint": "eslint 'src/**/*.ts' 'src/**/*.tsx'",
-    "pretty": "prettier --check 'src/**/*.ts' 'src/**/*.tsx'"
+    "pretty": "prettier --check 'src/**/*.ts' 'src/**/*.tsx'",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "@mdx-js/tag": "^0.20.3",
