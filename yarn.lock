@@ -6556,9 +6556,9 @@ serve-handler@6.1.0:
     range-parser "1.2.0"
 
 serve-handler@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/serve-handler/-/serve-handler-6.1.1.tgz#e4470ba9f4294c970012f5b5428c6582225106f6"
-  integrity sha512-LQPvxGia2TYqyMkHKH4jW9jx6jlQUMcWz6gJavZ3+4vsnB+SaWbYTncb9YsK5YBR6SlvyumREZJAzLw8VaFAUQ==
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/serve-handler/-/serve-handler-6.1.2.tgz#f05b0421a313fff2d257838cba00cbcc512cd2b6"
+  integrity sha512-RFh49wX7zJmmOVDcIjiDSJnMH+ItQEvyuYLYuDBVoA/xmQSCuj+uRmk1cmBB5QQlI3qOiWKp6p4DUGY+Z5AB2A==
   dependencies:
     bytes "3.0.0"
     content-disposition "0.5.2"
