@@ -79,29 +79,31 @@ function WorkExperience(props: { experiencies: Work[] }) {
           <div>
             <strong css={{ fontWeight: 500 }}>{experience.position}</strong>
             <Space />
-            {experience.endDate ? (
-              <em
-                css={{
-                  fontSize: "0.9em",
-                  fontStyle: "normal",
-                  fontWeight: "lighter"
-                }}
-              >
-                {format(new Date(experience.startDate), "MMM yyyy")}
-                {" - "}
-                {format(new Date(experience.endDate), "MMM yyyy")}
-              </em>
-            ) : (
-              <em
-                css={{
-                  fontSize: "0.9em",
-                  fontStyle: "normal",
-                  fontWeight: "lighter"
-                }}
-              >
-                {format(new Date(experience.startDate), "MMM yyyy")} - Current
-              </em>
-            )}
+            {experience.startDate ? (
+              experience.endDate ? (
+                <em
+                  css={{
+                    fontSize: "0.9em",
+                    fontStyle: "normal",
+                    fontWeight: "lighter"
+                  }}
+                >
+                  {format(new Date(experience.startDate), "MMM yyyy")}
+                  {" - "}
+                  {format(new Date(experience.endDate), "MMM yyyy")}
+                </em>
+              ) : (
+                <em
+                  css={{
+                    fontSize: "0.9em",
+                    fontStyle: "normal",
+                    fontWeight: "lighter"
+                  }}
+                >
+                  {format(new Date(experience.startDate), "MMM yyyy")} - Current
+                </em>
+              )
+            ) : null}
           </div>
           {experience.summary && <ui.p>{experience.summary}</ui.p>}
           {experience.highlights && (
@@ -129,29 +131,31 @@ function VolunteerExperience(props: { experiencies: Volunteer[] }) {
           <div>
             <strong css={{ fontWeight: 500 }}>{experience.position}</strong>
             <Space />
-            {experience.endDate ? (
-              <em
-                css={{
-                  fontSize: "0.9em",
-                  fontStyle: "normal",
-                  fontWeight: "lighter"
-                }}
-              >
-                {format(new Date(experience.startDate), "MMM yyyy")}
-                {" - "}
-                {format(new Date(experience.endDate), "MMM yyyy")}
-              </em>
-            ) : (
-              <em
-                css={{
-                  fontSize: "0.9em",
-                  fontStyle: "normal",
-                  fontWeight: "lighter"
-                }}
-              >
-                {format(new Date(experience.startDate), "MMM yyyy")} - Current
-              </em>
-            )}
+            {experience.startDate ? (
+              experience.endDate ? (
+                <em
+                  css={{
+                    fontSize: "0.9em",
+                    fontStyle: "normal",
+                    fontWeight: "lighter"
+                  }}
+                >
+                  {format(new Date(experience.startDate), "MMM yyyy")}
+                  {" - "}
+                  {format(new Date(experience.endDate), "MMM yyyy")}
+                </em>
+              ) : (
+                <em
+                  css={{
+                    fontSize: "0.9em",
+                    fontStyle: "normal",
+                    fontWeight: "lighter"
+                  }}
+                >
+                  {format(new Date(experience.startDate), "MMM yyyy")} - Current
+                </em>
+              )
+            ) : null}
           </div>
           {experience.summary && <ui.p>{experience.summary}</ui.p>}
           {experience.highlights && (
