@@ -50,7 +50,7 @@ describe("Lead", () => {
   test("Date", () => {
     const { asFragment, getByText } = render(
       <StateProvider state={state}>
-        <DateTime date={new Date("2019-09-15T00:12:57.350Z")} />
+        <DateTime date={new Date("Sat, 14 Sep 2019 19:00:00 GMT-3")} />
       </StateProvider>
     );
 
