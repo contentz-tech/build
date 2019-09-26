@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Patreon With Patreon 1`] = `
+<DocumentFragment>
+  .emotion-1 {
+  margin: 0;
+}
+
+.emotion-0 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<p
+    class="emotion-1"
+  >
+    Do you like my content? 
+    <br />
+     
+    <a
+      class="emotion-0"
+      href="https://patreon.com/sergiodxa"
+      rel="nofollow noopener"
+      target="_blank"
+    >
+      Become a Patreon and help me continue writing!
+    </a>
+  </p>
+</DocumentFragment>
+`;
+
+exports[`Patreon Without Patreon 1`] = `<DocumentFragment />`;

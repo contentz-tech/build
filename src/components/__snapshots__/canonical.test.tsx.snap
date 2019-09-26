@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CanonicalURL With value 1`] = `
+<DocumentFragment>
+  .emotion-1 {
+  box-shadow: rgba(0,0,0,0.12) 0px 2px 5px 0px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 1.5em -2em 3em;
+  padding: 1em 2em;
+}
+
+@media (max-width:720px) {
+  .emotion-1 {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1em 0.5em;
+  }
+}
+
+.emotion-0 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+    class="emotion-1"
+  >
+    Originally published at 
+    <a
+      class="emotion-0"
+      href="https://sergiodxa.com/contentz"
+      rel="canonical"
+      target="_blank"
+      title="sergiodxa.com"
+    >
+      <strong>
+        sergiodxa.com
+      </strong>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CanonicalURL Without value 1`] = `<DocumentFragment />`;

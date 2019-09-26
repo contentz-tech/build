@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Non Selectable 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  box-shadow: rgba(0,0,0,0.12) 0px 2px 5px 0px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 1.5em -2em 3em;
+  padding: 1em 2em;
+}
+
+@media (max-width:720px) {
+  .emotion-0 {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1em 0.5em;
+  }
+}
+
+<div
+    class="emotion-0"
+  >
+    This is the content of the card.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Card Selectable 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  box-shadow: rgba(0,0,0,0.12) 0px 2px 5px 0px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  margin: 1.5em -2em 3em;
+  padding: 1em 2em;
+}
+
+@media (max-width:720px) {
+  .emotion-0 {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1em 0.5em;
+  }
+}
+
+<div
+    class="emotion-0"
+  >
+    This is the content of the card.
+  </div>
+</DocumentFragment>
+`;

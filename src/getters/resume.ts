@@ -2,107 +2,107 @@ import { readFile, exists } from "../utils/fs";
 import { validate, SchemaError } from "resume-schema";
 
 interface IResume {
-  basics: Basics;
-  work: Work[];
-  volunteer: Volunteer[];
-  education: Education[];
-  awards: Award[];
-  publications: Publication[];
-  skills: Skill[];
-  languages: Language[];
-  interests: Interest[];
-  references: Reference[];
+  basics?: Basics;
+  work?: Work[];
+  volunteer?: Volunteer[];
+  education?: Education[];
+  awards?: Award[];
+  publications?: Publication[];
+  skills?: Skill[];
+  languages?: Language[];
+  interests?: Interest[];
+  references?: Reference[];
 }
 
 interface Basics {
-  name: string;
-  label: string;
-  email: string;
+  name?: string;
+  label?: string;
+  email?: string;
   phone?: string;
-  website: string;
-  summary: string;
-  location: Location;
-  profiles: Profile[];
+  website?: string;
+  summary?: string;
+  location?: Location;
+  profiles?: Profile[];
 }
 
 interface Location {
-  address: string;
-  postalCode: string;
-  city: string;
-  countryCode: string;
-  region: string;
+  address?: string;
+  postalCode?: string;
+  city?: string;
+  countryCode?: string;
+  region?: string;
 }
 
 interface Profile {
-  network: string;
-  username: string;
-  url: string;
+  network?: string;
+  username?: string;
+  url?: string;
 }
 
 interface Work {
-  company: string;
-  position: string;
+  company?: string;
+  position?: string;
   website?: string;
-  startDate: string;
+  startDate?: string;
   endDate?: string;
   summary?: string;
   highlights?: string[];
 }
 
 interface Volunteer {
-  organization: string;
-  position: string;
-  website: string;
-  startDate: string;
-  endDate: string;
-  summary: string;
-  highlights: string[];
+  organization?: string;
+  position?: string;
+  website?: string;
+  startDate?: string;
+  endDate?: string;
+  summary?: string;
+  highlights?: string[];
 }
 
 interface Education {
-  institution: string;
-  area: string;
-  studyType: string;
-  startDate: string;
-  endDate: string;
-  gpa: string;
-  courses: string[];
+  institution?: string;
+  area?: string;
+  studyType?: string;
+  startDate?: string;
+  endDate?: string;
+  gpa?: string;
+  courses?: string[];
 }
 
 interface Award {
-  title: string;
-  date: string;
-  awarder: string;
-  summary: string;
+  title?: string;
+  date?: string;
+  awarder?: string;
+  summary?: string;
 }
 
 interface Publication {
-  name: string;
-  publisher: string;
-  releaseDate: string;
-  website: string;
-  summary: string;
+  name?: string;
+  publisher?: string;
+  releaseDate?: string;
+  website?: string;
+  summary?: string;
 }
 
 interface Skill {
-  name: string;
-  level: string;
-  keywords: string[];
+  name?: string;
+  level?: string;
+  keywords?: string[];
 }
 
 interface Language {
-  language: string;
-  fluency: string;
+  language?: string;
+  fluency?: string;
 }
 
 interface Interest {
-  name: string;
-  keywords: string[];
+  name?: string;
+  keywords?: string[];
 }
 
 interface Reference {
-  name: string;
-  reference: string;
+  name?: string;
+  reference?: string;
 }
 
 function parseSchemaError(errors: SchemaError[]): string {

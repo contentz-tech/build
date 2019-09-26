@@ -37,8 +37,8 @@
   "scripts": {
     "build": "ncc build src/index.tsx -o dist",
     "test": "jest",
-    "lint": "eslint 'src/**/*.js'",
-    "pretty": "prettier --check 'src/**/*.js'"
+    "lint": "eslint 'src/**/*.ts' 'src/**/*.tsx'",
+    "pretty": "prettier --check 'src/**/*.ts' 'src/**/*.tsx'"
   },
   "dependencies": {
     "@mdx-js/tag": "^0.20.3",
@@ -49,11 +49,16 @@
   "devDependencies": {
     "@babel/core": "7.6.0",
     "@babel/preset-env": "7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@emotion/babel-preset-css-prop": "10.0.17",
     "@emotion/core": "10.0.17",
     "@mdx-js/mdx": "0.17.5",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
     "@types/babel-core": "^6.25.6",
     "@types/clear": "^0.1.0",
+    "@types/jest": "^24.0.18",
     "@types/mkdirp": "^0.5.2",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
@@ -80,6 +85,7 @@
     "gray-matter": "4.0.2",
     "ink": "^2.3.0",
     "jest": "^24.9.0",
+    "jest-emotion": "^10.0.17",
     "jest-puppeteer": "^4.3.0",
     "lint-staged": "9.4.0",
     "mkdirp": "0.5.1",
@@ -96,7 +102,7 @@
     "serve-handler": "^6.1.1",
     "term-size": "^2.1.0",
     "terser": "4.3.1",
-    "test-listen": "^1.1.0"
+    "typescript": "^3.6.3"
   },
   "husky": {
     "hooks": {
@@ -115,6 +121,9 @@
     ]
   },
   "jest": {
-    "preset": "jest-puppeteer"
+    "preset": "jest-puppeteer",
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
   }
 }

@@ -36,7 +36,9 @@ function Blockquote(props: any) {
 function Anchor(props: any) {
   const extraProps = {
     target: !parse(props.href).resource ? "_self" : "_blank",
-    ...(!parse(props.href).resource ? {} : { rel: "nofollow noopener" })
+    ...(!parse(props.href).resource
+      ? {}
+      : { rel: props.rel || "nofollow noopener" })
   };
 
   return (

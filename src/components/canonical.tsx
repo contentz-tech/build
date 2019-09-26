@@ -6,17 +6,21 @@ import Card from "./card";
 import { useState } from "./state";
 
 interface CanonicalURLProps {
-  value: string;
+  value?: string;
 }
 
 function CanonicalURL({ value }: CanonicalURLProps) {
   const state = useState();
 
+  if (!value) return null;
+
+  const hostname = parse(value).hostname;
+
   return (
     <Card>
       {state.i18n.canonicalUrl.copy}
-      <Anchor href={value} target="_blank" rel="canonical">
-        <strong>{parse(value).hostname}</strong>
+      <Anchor href={value} title={hostname} target="_blank" rel="canonical">
+        <strong>{hostname}</strong>
       </Anchor>
     </Card>
   );

@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code Code 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  color: #f81ce5;
+  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  font-size: 0.8em;
+  white-space: pre-wrap;
+}
+
+.emotion-0:before {
+  content: '\`';
+}
+
+.emotion-0:after {
+  content: '\`';
+}
+
+<code
+    class="emotion-0"
+  >
+    function loadLocale(locale: string = "en-US"): any {
+  try {
+    const module = require(\`date-fns/locale/\${locale}/index.js\`);
+    if (module.default) return module.default;
+    return module;
+  } catch (error) {
+    if (error.code === "MODULE_NOT_FOUND" && locale !== "en-US") {
+      return loadLocale();
+    }
+    throw error;
+  }
+}
+
+export { loadLocale };
+
+  </code>
+</DocumentFragment>
+`;
+
+exports[`Code Pre 1`] = `
+<DocumentFragment>
+  .emotion-0 {
+  color: #f81ce5;
+  font-family: Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+  font-size: 0.8em;
+  white-space: pre-wrap;
+}
+
+.emotion-0:before {
+  content: '\`';
+}
+
+.emotion-0:after {
+  content: '\`';
+}
+
+.emotion-2 {
+  box-shadow: rgba(0,0,0,0.12) 0px 2px 5px 0px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  margin: 1.5em -2em 3em;
+  padding: 1em 2em;
+}
+
+@media (max-width:720px) {
+  .emotion-2 {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1em 0.5em;
+  }
+}
+
+.emotion-1 {
+  overflow-x: scroll;
+  max-height: none;
+}
+
+.emotion-1 code {
+  color: black;
+}
+
+.emotion-1 code:before {
+  content: '';
+}
+
+.emotion-1 code:after {
+  content: '';
+}
+
+<div
+    class="emotion-2"
+  >
+    <pre
+      class="emotion-1"
+    >
+      <code
+        class="emotion-0"
+      >
+        function loadLocale(locale: string = "en-US"): any {
+  try {
+    const module = require(\`date-fns/locale/\${locale}/index.js\`);
+    if (module.default) return module.default;
+    return module;
+  } catch (error) {
+    if (error.code === "MODULE_NOT_FOUND" && locale !== "en-US") {
+      return loadLocale();
+    }
+    throw error;
+  }
+}
+
+export { loadLocale };
+
+      </code>
+    </pre>
+  </div>
+</DocumentFragment>
+`;
