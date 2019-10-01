@@ -4,7 +4,7 @@ import Header from "./header";
 import { useState } from "./state";
 import { IState } from "../state";
 import ui from "./ui";
-import { Basics, Work, Volunteer, Language } from "../getters/resume";
+import { Basics, Work, Volunteer, Language, Skill } from "../getters/resume";
 import format from "date-fns/format";
 
 enum SpaceSize {
@@ -193,6 +193,34 @@ function Languages(props: { languages: Language[] }) {
   );
 }
 
+function Skills(props: { skills: Skill[] }) {
+  if (props.skills.length === 0) return null;
+
+  return (
+    <section id="section-skills" css={{ marginBottom: "3rem" }}>
+      <ui.h3>Skills</ui.h3>
+      <section>
+        {props.skills.map(skill => (
+          <article key={skill.name}>
+            <ui.h4>{skill.name}</ui.h4>
+            <div css={{ display: "flex", flexWrap: "wrap" }}>
+              {skill.keywords &&
+                skill.keywords.map(keyword => (
+                  <Fragment key={JSON.stringify(keyword)}>
+                    <small css={{ fontWeight: "lighter", fontSize: "0.8em" }}>
+                      {keyword}
+                      <Space size={SpaceSize.Small} />
+                    </small>
+                  </Fragment>
+                ))}
+            </div>
+          </article>
+        ))}
+      </section>
+    </section>
+  );
+}
+
 function ResumePage() {
   const state: IState = useState();
 
@@ -212,6 +240,7 @@ function ResumePage() {
         }}
       >
         <Basics {...state.resume.basics} />
+        {state.resume.skills && <Skills skills={state.resume.skills} />}
         {state.resume.work && (
           <WorkExperience experiencies={state.resume.work} />
         )}
