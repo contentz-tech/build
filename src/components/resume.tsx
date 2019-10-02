@@ -125,8 +125,8 @@ function WorkExperience(props: { experiencies: Work[] }) {
                 key={JSON.stringify(experience)}
                 css={{
                   display: "grid",
-                  gridTemplateAreas: "'dot position date' 'line body body'",
-                  gridTemplateColumns: "25px 1fr 57%",
+                  gridTemplateAreas: "'dot position . date' 'line body body body'",
+                  gridTemplateColumns: "25px 1fr  10px 57%",
                   gridTemplateRows: "40px 1fr",
                   alignItems: "center"
                 }}
