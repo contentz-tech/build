@@ -84,8 +84,7 @@ function ArchivePage() {
                   <a
                     href={article.path}
                     css={{
-                      color: "black",
-                      "@media (prefers-color-scheme: dark)": { color: "white" }
+                      color: "black"
                     }}
                   >
                     {article.title}

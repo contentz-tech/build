@@ -47,10 +47,7 @@ function Header() {
               flex: 1,
               whiteSpace: "nowrap",
               color: "black",
-              textDecoration: "none",
-              "@media (prefers-color-scheme: dark)": {
-                color: "white"
-              }
+              textDecoration: "none"
             }}
           >
             {state.config.title}
