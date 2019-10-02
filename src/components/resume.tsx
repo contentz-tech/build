@@ -23,6 +23,34 @@ function Space({ size = SpaceSize.Medium }: { size?: SpaceSize }) {
   );
 }
 
+function Line() {
+  return (
+    <div
+      css={{
+        width: "3px",
+        height: "100%",
+        background: "black",
+        marginLeft: "3px",
+        gridArea: "line"
+      }}
+    />
+  );
+}
+
+function Dot() {
+  return (
+    <div
+      css={{
+        width: "10px",
+        height: "10px",
+        background: "black",
+        borderRadius: "50%",
+        gridArea: "dot"
+      }}
+    />
+  );
+}
+
 function Basics(props: Basics) {
   return (
     <section id="basics" css={{ marginBottom: "3rem" }}>
@@ -70,50 +98,95 @@ function Basics(props: Basics) {
 function WorkExperience(props: { experiencies: Work[] }) {
   if (props.experiencies.length === 0) return null;
 
+  const groupedExperiences = props.experiencies.reduce(
+    (works: Work[][], work) => {
+      if (
+        works.length > 0 &&
+        work.company === works[works.length - 1][0].company
+      ) {
+        works[works.length - 1].push(work);
+      } else {
+        works.push([work]);
+      }
+      return works;
+    },
+    []
+  );
+
   return (
-    <section id="work" css={{ marginBottom: "3rem" }}>
+    <section id="section-work" css={{ marginBottom: "3rem" }}>
       <ui.h3>Experience</ui.h3>
-      {props.experiencies.map(experience => (
-        <article key={JSON.stringify(experience)}>
-          <ui.h4>{experience.company}</ui.h4>
-          <div>
-            <strong css={{ fontWeight: 500 }}>{experience.position}</strong>
-            <Space />
-            {experience.startDate ? (
-              experience.endDate ? (
-                <em
+      {groupedExperiences.map((companyGroup: Work[]) => (
+        <Fragment key={JSON.stringify(companyGroup)}>
+          <article>
+            <ui.h4 css={{ margin: "1em 0" }}>{companyGroup[0].company}</ui.h4>
+            {companyGroup.map((experience, index) => (
+              <div
+                key={JSON.stringify(experience)}
+                css={{
+                  display: "grid",
+                  gridTemplateAreas: "'dot position . date' 'line body body body'",
+                  gridTemplateColumns: "25px 1fr  10px 57%",
+                  gridTemplateRows: "40px 1fr",
+                  alignItems: "center"
+                }}
+              >
+                <Dot />
+                <strong css={{ fontWeight: 500, gridArea: "position" }}>
+                  {experience.position}
+                </strong>
+                {experience.startDate ? (
+                  experience.endDate ? (
+                    <em
+                      css={{
+                        fontSize: "0.9em",
+                        fontStyle: "normal",
+                        fontWeight: "lighter",
+                        gridArea: "date"
+                      }}
+                    >
+                      {format(new Date(experience.startDate), "MMM yyyy")}
+                      {" - "}
+                      {format(new Date(experience.endDate), "MMM yyyy")}
+                    </em>
+                  ) : (
+                    <em
+                      css={{
+                        fontSize: "0.9em",
+                        fontStyle: "normal",
+                        fontWeight: "lighter",
+                        gridArea: "date"
+                      }}
+                    >
+                      {format(new Date(experience.startDate), "MMM yyyy")} -
+                      Current
+                    </em>
+                  )
+                ) : null}
+                {index < companyGroup.length - 1 && <Line />}
+                <div
                   css={{
-                    fontSize: "0.9em",
-                    fontStyle: "normal",
-                    fontWeight: "lighter"
+                    minHeight: "1em",
+                    gridArea: "body"
                   }}
                 >
-                  {format(new Date(experience.startDate), "MMM yyyy")}
-                  {" - "}
-                  {format(new Date(experience.endDate), "MMM yyyy")}
-                </em>
-              ) : (
-                <em
-                  css={{
-                    fontSize: "0.9em",
-                    fontStyle: "normal",
-                    fontWeight: "lighter"
-                  }}
-                >
-                  {format(new Date(experience.startDate), "MMM yyyy")} - Current
-                </em>
-              )
-            ) : null}
-          </div>
-          {experience.summary && <ui.p>{experience.summary}</ui.p>}
-          {experience.highlights && (
-            <ui.ul>
-              {experience.highlights.map(highlight => (
-                <ui.li key={highlight}>{highlight}</ui.li>
-              ))}
-            </ui.ul>
-          )}
-        </article>
+                  {experience.summary && (
+                    <ui.p css={{ wordBreak: "break-word" }}>
+                      {experience.summary}
+                    </ui.p>
+                  )}
+                  {experience.highlights && (
+                    <ui.ul css={{ marginLeft: "0px" }}>
+                      {experience.highlights.map(highlight => (
+                        <ui.li key={highlight}>{highlight}</ui.li>
+                      ))}
+                    </ui.ul>
+                  )}
+                </div>
+              </div>
+            ))}
+          </article>
+        </Fragment>
       ))}
     </section>
   );
