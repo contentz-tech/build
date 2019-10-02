@@ -98,7 +98,7 @@ function Basics(props: Basics) {
 function WorkExperience(props: { experiencies: Work[] }) {
   if (props.experiencies.length === 0) return null;
 
-  let groupedExperiences = props.experiencies.reduce(
+  const groupedExperiences = props.experiencies.reduce(
     (works: Work[][], work) => {
       if (
         works.length > 0 &&
