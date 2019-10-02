@@ -27,12 +27,11 @@ function Line() {
   return (
     <div
       css={{
-        position: "absolute",
-        top: "1.5em",
-        left: "0.2em",
-        width: "2px",
+        width: "3px",
         height: "100%",
-        background: "black"
+        background: "black",
+        marginLeft: "3px",
+        gridArea: "line"
       }}
     />
   );
@@ -42,12 +41,11 @@ function Dot() {
   return (
     <div
       css={{
-        width: "0.5em",
-        height: "0.5em",
+        width: "10px",
+        height: "10px",
         background: "black",
         borderRadius: "50%",
-        marginRight: "1em",
-        flexShrink: 0
+        gridArea: "dot"
       }}
     />
   );
@@ -101,16 +99,16 @@ function WorkExperience(props: { experiencies: Work[] }) {
   if (props.experiencies.length === 0) return null;
 
   let groupedExperiences = props.experiencies.reduce(
-    (accumulator: Work[][], current) => {
+    (works: Work[][], work) => {
       if (
-        accumulator.length &&
-        current.company === accumulator[accumulator.length - 1][0].company
+        works.length > 0 &&
+        work.company === works[works.length - 1][0].company
       ) {
-        accumulator[accumulator.length - 1].push(current);
+        works[works.length - 1].push(work);
       } else {
-        accumulator.push([current]);
+        works.push([work]);
       }
-      return accumulator;
+      return works;
     },
     []
   );
@@ -120,58 +118,65 @@ function WorkExperience(props: { experiencies: Work[] }) {
       <ui.h3>Experience</ui.h3>
       {groupedExperiences.map((companyGroup: Work[]) => (
         <Fragment key={JSON.stringify(companyGroup)}>
-          <ui.h4>{companyGroup[0].company}</ui.h4>
-          {companyGroup.map((experience, index) => (
-            <article key={JSON.stringify(experience)}>
-              <div css={{ position: "relative" }}>
+          <article>
+            <ui.h4 css={{ margin: "1em 0" }}>{companyGroup[0].company}</ui.h4>
+            {companyGroup.map((experience, index) => (
+              <div
+                key={JSON.stringify(experience)}
+                css={{
+                  display: "grid",
+                  gridTemplateAreas: "'dot position date' 'line body body'",
+                  gridTemplateColumns: "25px 1fr 57%",
+                  gridTemplateRows: "40px 1fr",
+                  alignItems: "center"
+                }}
+              >
+                <Dot />
+                <strong css={{ fontWeight: 500, gridArea: "position" }}>
+                  {experience.position}
+                </strong>
+                {experience.startDate ? (
+                  experience.endDate ? (
+                    <em
+                      css={{
+                        fontSize: "0.9em",
+                        fontStyle: "normal",
+                        fontWeight: "lighter",
+                        gridArea: "date"
+                      }}
+                    >
+                      {format(new Date(experience.startDate), "MMM yyyy")}
+                      {" - "}
+                      {format(new Date(experience.endDate), "MMM yyyy")}
+                    </em>
+                  ) : (
+                    <em
+                      css={{
+                        fontSize: "0.9em",
+                        fontStyle: "normal",
+                        fontWeight: "lighter",
+                        gridArea: "date"
+                      }}
+                    >
+                      {format(new Date(experience.startDate), "MMM yyyy")} -
+                      Current
+                    </em>
+                  )
+                ) : null}
                 {index < companyGroup.length - 1 && <Line />}
                 <div
                   css={{
-                    display: "flex",
-                    alignItems: "center",
-                    margin: "30px 0"
+                    minHeight: "1em",
+                    gridArea: "body"
                   }}
                 >
-                  <Dot />
-                  <strong css={{ fontWeight: 500 }}>
-                    {experience.position}
-                  </strong>
-                  <Space />
-                  {experience.startDate ? (
-                    experience.endDate ? (
-                      <em
-                        css={{
-                          fontSize: "0.9em",
-                          fontStyle: "normal",
-                          fontWeight: "lighter"
-                        }}
-                      >
-                        {format(new Date(experience.startDate), "MMM yyyy")}
-                        {" - "}
-                        {format(new Date(experience.endDate), "MMM yyyy")}
-                      </em>
-                    ) : (
-                      <em
-                        css={{
-                          fontSize: "0.9em",
-                          fontStyle: "normal",
-                          fontWeight: "lighter"
-                        }}
-                      >
-                        {format(new Date(experience.startDate), "MMM yyyy")} -
-                        Current
-                      </em>
-                    )
-                  ) : null}
-                </div>
-                <div css={{ marginLeft: "3em" }}>
                   {experience.summary && (
                     <ui.p css={{ wordBreak: "break-word" }}>
                       {experience.summary}
                     </ui.p>
                   )}
                   {experience.highlights && (
-                    <ui.ul>
+                    <ui.ul css={{ marginLeft: "0px" }}>
                       {experience.highlights.map(highlight => (
                         <ui.li key={highlight}>{highlight}</ui.li>
                       ))}
@@ -179,8 +184,8 @@ function WorkExperience(props: { experiencies: Work[] }) {
                   )}
                 </div>
               </div>
-            </article>
-          ))}
+            ))}
+          </article>
         </Fragment>
       ))}
     </section>
