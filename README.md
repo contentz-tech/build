@@ -1,6 +1,6 @@
 # @contentz/build
 
-![](https://github.com/contentz-tech/build/workflows/Node%20CI/badge.svg)
+![](https://github.com/contentz-tech/build/workflows/CI/badge.svg) ![](https://github.com/contentz-tech/build/workflows/Publish/badge.svg)
 
 Build your Contentz website for production
 
