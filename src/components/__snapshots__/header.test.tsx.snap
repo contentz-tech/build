@@ -48,12 +48,6 @@ exports[`Header Complete 1`] = `
   text-decoration: none;
 }
 
-@media (prefers-color-scheme:dark) {
-  .emotion-0 {
-    color: white;
-  }
-}
-
 .emotion-7 {
   overflow-x: auto;
   margin: -1em 0;
@@ -183,12 +177,6 @@ exports[`Header Only Title 1`] = `
   color: black;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme:dark) {
-  .emotion-0 {
-    color: white;
-  }
 }
 
 <header
