@@ -5,8 +5,8 @@ on:
     types: [published]
 
 jobs:
-  install:
-    name: Install Dependencies
+  build:
+    name: Install and Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -14,16 +14,6 @@ jobs:
         with:
           node-version: 12
       - run: yarn install
-
-  build:
-    name: Build
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
       - run: yarn build
 
   publish:
