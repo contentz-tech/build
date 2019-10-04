@@ -1,6 +1,8 @@
 # @contentz/build
 
-![](https://github.com/contentz-tech/build/workflows/CI/badge.svg) ![](https://github.com/contentz-tech/build/workflows/Publish/badge.svg)
+![CI Status](https://github.com/contentz-tech/build/workflows/CI/badge.svg)
+![Publish Status](https://github.com/contentz-tech/build/workflows/Publish/badge.svg)
+![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=contentz-tech/build)
 
 Build your Contentz website for production
 
