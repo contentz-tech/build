@@ -5,6 +5,10 @@
 ![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=contentz-tech/build)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a9aa96871f4e7785400f/maintainability)](https://codeclimate.com/github/contentz-tech/build/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a9aa96871f4e7785400f/test_coverage)](https://codeclimate.com/github/contentz-tech/build/test_coverage)
+![license](https://badgen.net/github/license/contentz-tech/build)
+![releases](https://badgen.net/github/releases/contentz-tech/build)
+![npm version](https://badgen.net/npm/v/@contentz/build)
+![dependencies](https://badgen.net/david/dep/contentz-tech/build)
 
 Build your Contentz website for production
 
