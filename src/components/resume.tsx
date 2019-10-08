@@ -57,19 +57,31 @@ function Basics(props: Basics) {
       {props.name && <ui.h1 css={{ marginBottom: 0 }}>{props.name}</ui.h1>}
       <div>
         {props.email && (
-          <ui.a href={props.email} title="Email address">
+          <ui.a
+            href={props.email}
+            title="Email address"
+            css={{ display: "inline-block", marginBottom: "10px" }}
+          >
             {props.email}
           </ui.a>
         )}
         <Space />
         {props.phone && (
-          <ui.a href={`tel:${props.phone}`} title="Phone number">
+          <ui.a
+            href={`tel:${props.phone}`}
+            title="Phone number"
+            css={{ display: "inline-block", marginBottom: "10px" }}
+          >
             {props.phone}
           </ui.a>
         )}
         <Space />
         {props.website && (
-          <ui.a href={props.website} title="Personal website">
+          <ui.a
+            href={props.website}
+            title="Personal website"
+            css={{ display: "inline-block", marginBottom: "10px" }}
+          >
             {props.website}
           </ui.a>
         )}
@@ -125,10 +137,12 @@ function WorkExperience(props: { experiencies: Work[] }) {
                 key={JSON.stringify(experience)}
                 css={{
                   display: "grid",
-                  gridTemplateAreas: "'dot position . date' 'line body body body'",
-                  gridTemplateColumns: "25px 1fr  10px 57%",
+                  gridTemplateAreas:
+                    "'dot position . date' 'line body body body'",
+                  gridTemplateColumns: "25px 1fr  10px 160px",
                   gridTemplateRows: "40px 1fr",
-                  alignItems: "center"
+                  alignItems: "center",
+                  maxWidth: "500px"
                 }}
               >
                 <Dot />
@@ -141,8 +155,9 @@ function WorkExperience(props: { experiencies: Work[] }) {
                       css={{
                         fontSize: "0.9em",
                         fontStyle: "normal",
-                        fontWeight: "lighter",
-                        gridArea: "date"
+                        fontWeight: 300,
+                        gridArea: "date",
+                        textAlign: "right"
                       }}
                     >
                       {format(new Date(experience.startDate), "MMM yyyy")}
@@ -154,8 +169,9 @@ function WorkExperience(props: { experiencies: Work[] }) {
                       css={{
                         fontSize: "0.9em",
                         fontStyle: "normal",
-                        fontWeight: "lighter",
-                        gridArea: "date"
+                        fontWeight: 300,
+                        gridArea: "date",
+                        textAlign: "right"
                       }}
                     >
                       {format(new Date(experience.startDate), "MMM yyyy")} -
@@ -210,7 +226,7 @@ function VolunteerExperience(props: { experiencies: Volunteer[] }) {
                   css={{
                     fontSize: "0.9em",
                     fontStyle: "normal",
-                    fontWeight: "lighter"
+                    fontWeight: 300
                   }}
                 >
                   {format(new Date(experience.startDate), "MMM yyyy")}
@@ -222,7 +238,7 @@ function VolunteerExperience(props: { experiencies: Volunteer[] }) {
                   css={{
                     fontSize: "0.9em",
                     fontStyle: "normal",
-                    fontWeight: "lighter"
+                    fontWeight: 300
                   }}
                 >
                   {format(new Date(experience.startDate), "MMM yyyy")} - Current
@@ -248,14 +264,14 @@ function Languages(props: { languages: Language[] }) {
   if (props.languages.length === 0) return null;
 
   return (
-    <section id="languages" css={{ marginBottom: "3rem" }}>
+    <section id="section-languages" css={{ marginBottom: "3rem" }}>
       <ui.h3>Languages</ui.h3>
       <section>
         {props.languages.map(language => (
           <article key={language.language}>
             <ui.h6>
               {language.language}{" "}
-              <small css={{ fontWeight: "lighter", fontSize: "0.8em" }}>
+              <small css={{ fontWeight: 300, fontSize: "0.8em" }}>
                 ({language.fluency})
               </small>
             </ui.h6>
@@ -275,12 +291,12 @@ function Skills(props: { skills: Skill[] }) {
       <section>
         {props.skills.map(skill => (
           <article key={skill.name}>
-            <ui.h4>{skill.name}</ui.h4>
+            <ui.h6>{skill.name}</ui.h6>
             <div css={{ display: "flex", flexWrap: "wrap" }}>
               {skill.keywords &&
                 skill.keywords.map(keyword => (
                   <Fragment key={JSON.stringify(keyword)}>
-                    <small css={{ fontWeight: "lighter", fontSize: "0.8em" }}>
+                    <small css={{ fontWeight: 300, fontSize: "0.8em" }}>
                       {keyword}
                       <Space size={SpaceSize.Small} />
                     </small>
