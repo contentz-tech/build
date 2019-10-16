@@ -10,6 +10,7 @@ import ReadNext from "./read-next";
 import { ContentType } from "../definitions";
 import { IArticle } from "../getters/articles";
 import { IPage } from "../getters/pages";
+import Share from "./icons/share";
 import { FunctionComponent } from "react";
 
 interface LayoutProps {
@@ -79,7 +80,29 @@ function Layout({ data, TOC, Component }: LayoutProps) {
           <ReadNext {...data.next} />
         )}
       </section>
-      <Footer repositoryPath={data.repositoryPath} />
+      <Footer repositoryPath={data.repositoryPath}>
+        {data.type === ContentType.Article && (
+          <button
+            css={{
+              alignItems: "center",
+              border: "none",
+              background: "none",
+              color: "black",
+              display: "inline-flex",
+              fontSize: "0.8em",
+              padding: 0,
+              marginRight: "1em"
+            }}
+            id="share"
+            style={{ display: "none" }}
+            data-description={data.description}
+          >
+            <span css={{ marginRight: ".5em" }}>Share</span>
+            <Share />
+          </button>
+        )}
+      </Footer>
+      {data.type === ContentType.Article && <script src="/share.js"></script>}
     </div>
   );
 }

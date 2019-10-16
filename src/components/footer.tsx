@@ -2,8 +2,12 @@ import { jsx } from "@emotion/core";
 import GitHubIcon from "./icons/github";
 import Patreon from "./patreon";
 import { useState } from "./state";
+import * as React from "react";
 
-function Footer(props: { repositoryPath?: string }) {
+function Footer(props: {
+  children?: React.ReactNode;
+  repositoryPath?: string;
+}) {
   // don't render footer if it's going to empty
   const state = useState();
   if (!state.config.patreon && !state.config.repository) return null;
@@ -37,28 +41,31 @@ function Footer(props: { repositoryPath?: string }) {
             <Patreon />
           </div>
         )}
-        {props.repositoryPath && (
-          <a
-            href={props.repositoryPath}
-            rel="alternate"
-            title={state.i18n.footer.editOnGitHub}
-            css={{
-              color: "black",
-              textDecoration: "none",
-              fontSize: "0.8em",
-              display: "inline-flex",
-              alignItems: "center",
-              "@media (max-width: 60rem)": {
-                marginTop: "1em"
-              }
-            }}
-          >
-            {state.i18n.footer.editOnGitHub}{" "}
-            <i css={{ height: "18px", width: "18px", marginLeft: "10px" }}>
-              <GitHubIcon />
-            </i>
-          </a>
-        )}
+        <div css={{ display: "inline-flex" }}>
+          {props.children}
+          {props.repositoryPath && (
+            <a
+              href={props.repositoryPath}
+              rel="alternate"
+              title={state.i18n.footer.editOnGitHub}
+              css={{
+                color: "black",
+                textDecoration: "none",
+                fontSize: "0.8em",
+                display: "inline-flex",
+                alignItems: "center",
+                "@media (max-width: 60rem)": {
+                  marginTop: "1em"
+                }
+              }}
+            >
+              {state.i18n.footer.editOnGitHub}{" "}
+              <i css={{ height: "18px", width: "18px", marginLeft: "10px" }}>
+                <GitHubIcon />
+              </i>
+            </a>
+          )}
+        </div>
       </div>
     </footer>
   );

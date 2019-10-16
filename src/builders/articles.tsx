@@ -13,6 +13,7 @@ import Archive from "../components/archive";
 import { IArticle } from "../getters/articles";
 import { loadModule } from "../utils/load-module";
 import { resolve, parse, join } from "path";
+import { minify } from "terser";
 
 /**
  * Check if all articles are already cached
@@ -86,6 +87,27 @@ async function archiveBuilder(state: IState) {
   );
 }
 
+async function shareArticle() {
+  await writeFile(
+    "./public/share.js",
+    minify(
+      [
+        'if ("share" in window.navigator) {',
+        "const button = document.getElementById('share')",
+        'button.style.display = "inline-flex"',
+        "button.addEventListener('click', () => {",
+        "window.navigator.share({",
+        "title: document.title,",
+        "text: button.dataset.description,",
+        "url: location.href",
+        "});",
+        "})",
+        "}"
+      ].join("\n")
+    ).code
+  );
+}
+
 async function builder(state: IState) {
   if ((await checkCache(state)) && (await check("config.yml", state.config))) {
     return;
@@ -95,6 +117,7 @@ async function builder(state: IState) {
     Object.values(state.articles.byPath)
       .map(articleBuilder(state))
       .concat(archiveBuilder(state))
+      .concat(shareArticle())
   );
 }
 
