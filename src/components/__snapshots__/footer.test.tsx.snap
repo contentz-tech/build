@@ -2,14 +2,14 @@
 
 exports[`Footer Complete 1`] = `
 <DocumentFragment>
-  .emotion-6 {
+  .emotion-7 {
   background: white;
   border-top: 1px solid #eaeaea;
   padding: 2em 0;
   margin-top: 3em;
 }
 
-.emotion-5 {
+.emotion-6 {
   max-width: 60rem;
   margin: 0 auto;
   display: -webkit-box;
@@ -23,7 +23,7 @@ exports[`Footer Complete 1`] = `
 }
 
 @media (max-width:60rem) and (orientation:portrait) {
-  .emotion-5 {
+  .emotion-6 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -32,9 +32,16 @@ exports[`Footer Complete 1`] = `
 }
 
 @media (max-width:60rem) and (orientation:landscape) {
-  .emotion-5 {
+  .emotion-6 {
     padding: 0 2em;
   }
+}
+
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .emotion-4 {
@@ -79,10 +86,10 @@ exports[`Footer Complete 1`] = `
 }
 
 <footer
-    class="emotion-6"
+    class="emotion-7"
   >
     <div
-      class="emotion-5"
+      class="emotion-6"
     >
       <div
         class="emotion-2"
@@ -103,25 +110,29 @@ exports[`Footer Complete 1`] = `
           </a>
         </p>
       </div>
-      <a
-        class="emotion-4"
-        href="https:/github.com/contentz-tech/build/edit/master/src/components/footer.test.tsx"
-        rel="alternate"
-        title="Edit it on GitHub"
+      <div
+        class="emotion-5"
       >
-        Edit it on GitHub 
-        <i
-          class="emotion-3"
+        <a
+          class="emotion-4"
+          href="https:/github.com/contentz-tech/build/edit/master/src/components/footer.test.tsx"
+          rel="alternate"
+          title="Edit it on GitHub"
         >
-          <svg
-            viewBox="0 0 24 24"
+          Edit it on GitHub 
+          <i
+            class="emotion-3"
           >
-            <path
-              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-            />
-          </svg>
-        </i>
-      </a>
+            <svg
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </i>
+        </a>
+      </div>
     </div>
   </footer>
 </DocumentFragment>
@@ -130,6 +141,97 @@ exports[`Footer Complete 1`] = `
 exports[`Footer Empty 1`] = `<DocumentFragment />`;
 
 exports[`Footer Only Patreon 1`] = `
+<DocumentFragment>
+  .emotion-5 {
+  background: white;
+  border-top: 1px solid #eaeaea;
+  padding: 2em 0;
+  margin-top: 3em;
+}
+
+.emotion-4 {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width:60rem) and (orientation:portrait) {
+  .emotion-4 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 2em;
+  }
+}
+
+@media (max-width:60rem) and (orientation:landscape) {
+  .emotion-4 {
+    padding: 0 2em;
+  }
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2 {
+  fontsize: 0.9em;
+}
+
+.emotion-1 {
+  margin: 0;
+}
+
+.emotion-0 {
+  color: #004BCC;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<footer
+    class="emotion-5"
+  >
+    <div
+      class="emotion-4"
+    >
+      <div
+        class="emotion-2"
+      >
+        <p
+          class="emotion-1"
+        >
+          Do you like my content? 
+          <br />
+           
+          <a
+            class="emotion-0"
+            href="https://patreon.com/sergiodxa"
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            Become a Patreon and help me continue writing!
+          </a>
+        </p>
+      </div>
+      <div
+        class="emotion-3"
+      />
+    </div>
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`Footer Only Repository 1`] = `
 <DocumentFragment>
   .emotion-4 {
   background: white;
@@ -167,84 +269,10 @@ exports[`Footer Only Patreon 1`] = `
 }
 
 .emotion-2 {
-  fontsize: 0.9em;
-}
-
-.emotion-1 {
-  margin: 0;
-}
-
-.emotion-0 {
-  color: #004BCC;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-<footer
-    class="emotion-4"
-  >
-    <div
-      class="emotion-3"
-    >
-      <div
-        class="emotion-2"
-      >
-        <p
-          class="emotion-1"
-        >
-          Do you like my content? 
-          <br />
-           
-          <a
-            class="emotion-0"
-            href="https://patreon.com/sergiodxa"
-            rel="nofollow noopener"
-            target="_blank"
-          >
-            Become a Patreon and help me continue writing!
-          </a>
-        </p>
-      </div>
-    </div>
-  </footer>
-</DocumentFragment>
-`;
-
-exports[`Footer Only Repository 1`] = `
-<DocumentFragment>
-  .emotion-3 {
-  background: white;
-  border-top: 1px solid #eaeaea;
-  padding: 2em 0;
-  margin-top: 3em;
-}
-
-.emotion-2 {
-  max-width: 60rem;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-@media (max-width:60rem) and (orientation:portrait) {
-  .emotion-2 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 0 2em;
-  }
-}
-
-@media (max-width:60rem) and (orientation:landscape) {
-  .emotion-2 {
-    padding: 0 2em;
-  }
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .emotion-1 {
@@ -275,30 +303,34 @@ exports[`Footer Only Repository 1`] = `
 }
 
 <footer
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-2"
+      class="emotion-3"
     >
-      <a
-        class="emotion-1"
-        href="https:/github.com/contentz-tech/build/edit/master/src/components/footer.test.tsx"
-        rel="alternate"
-        title="Edit it on GitHub"
+      <div
+        class="emotion-2"
       >
-        Edit it on GitHub 
-        <i
-          class="emotion-0"
+        <a
+          class="emotion-1"
+          href="https:/github.com/contentz-tech/build/edit/master/src/components/footer.test.tsx"
+          rel="alternate"
+          title="Edit it on GitHub"
         >
-          <svg
-            viewBox="0 0 24 24"
+          Edit it on GitHub 
+          <i
+            class="emotion-0"
           >
-            <path
-              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-            />
-          </svg>
-        </i>
-      </a>
+            <svg
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </i>
+        </a>
+      </div>
     </div>
   </footer>
 </DocumentFragment>
