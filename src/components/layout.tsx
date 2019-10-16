@@ -65,6 +65,15 @@ function Layout({ data, TOC, Component }: LayoutProps) {
       >
         {data.date && <Date date={data.date} />}
         <Title>{data.title}</Title>
+        <button
+          css={{}}
+          id="share"
+          data-title={data.title}
+          data-description={data.description}
+          data-path={data.path}
+        >
+          Share
+        </button>
         {data.description && <Description>{data.description}</Description>}
         {TOC && <TOC components={{ ...ui, wrapper: TOCWrapper }} />}
         {data.canonical_url && <CanonicalURL value={data.canonical_url} />}
@@ -80,6 +89,7 @@ function Layout({ data, TOC, Component }: LayoutProps) {
         )}
       </section>
       <Footer repositoryPath={data.repositoryPath} />
+      {data.type === ContentType.Article && <script src="/share.js"></script>}
     </div>
   );
 }
