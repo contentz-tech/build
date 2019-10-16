@@ -94,11 +94,12 @@ async function shareArticle() {
       [
         'if ("share" in window.navigator) {',
         "const button = document.getElementById('share')",
+        'button.style.display = "inline-flex"',
         "button.addEventListener('click', () => {",
         "window.navigator.share({",
-        "title: button.dataset.title,",
+        "title: document.title,",
         "text: button.dataset.description,",
-        "url: button.dataset.path",
+        "url: location.href",
         "});",
         "})",
         "}"
