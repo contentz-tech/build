@@ -41,7 +41,14 @@ function Footer(props: {
             <Patreon />
           </div>
         )}
-        <div css={{ display: "inline-flex" }}>
+        <div
+          css={{
+            display: "inline-flex",
+            "@media (max-width: 60rem)": {
+              marginTop: "1em"
+            }
+          }}
+        >
           {props.children}
           {props.repositoryPath && (
             <a
@@ -53,10 +60,7 @@ function Footer(props: {
                 textDecoration: "none",
                 fontSize: "0.8em",
                 display: "inline-flex",
-                alignItems: "center",
-                "@media (max-width: 60rem)": {
-                  marginTop: "1em"
-                }
+                alignItems: "center"
               }}
             >
               {state.i18n.footer.editOnGitHub}{" "}

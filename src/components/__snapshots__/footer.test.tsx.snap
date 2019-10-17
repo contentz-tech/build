@@ -44,6 +44,12 @@ exports[`Footer Complete 1`] = `
   display: inline-flex;
 }
 
+@media (max-width:60rem) {
+  .emotion-5 {
+    margin-top: 1em;
+  }
+}
+
 .emotion-4 {
   color: black;
   -webkit-text-decoration: none;
@@ -57,12 +63,6 @@ exports[`Footer Complete 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-@media (max-width:60rem) {
-  .emotion-4 {
-    margin-top: 1em;
-  }
 }
 
 .emotion-3 {
@@ -184,6 +184,12 @@ exports[`Footer Only Patreon 1`] = `
   display: inline-flex;
 }
 
+@media (max-width:60rem) {
+  .emotion-3 {
+    margin-top: 1em;
+  }
+}
+
 .emotion-2 {
   fontsize: 0.9em;
 }
@@ -275,6 +281,12 @@ exports[`Footer Only Repository 1`] = `
   display: inline-flex;
 }
 
+@media (max-width:60rem) {
+  .emotion-2 {
+    margin-top: 1em;
+  }
+}
+
 .emotion-1 {
   color: black;
   -webkit-text-decoration: none;
@@ -288,12 +300,6 @@ exports[`Footer Only Repository 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-@media (max-width:60rem) {
-  .emotion-1 {
-    margin-top: 1em;
-  }
 }
 
 .emotion-0 {
