@@ -25,7 +25,7 @@ function parsePath(path: string, { isSlide = false }: config = {}): IPath {
 }
 
 function parseRepositoryPath(repository: string, filePath: string): string {
-  return resolve(resolve(repository, "edit/master"), filePath);
+  return resolve(resolve(repository, "edit/master/"), filePath);
 }
 
 export { parsePath, parseRepositoryPath, IPath };
