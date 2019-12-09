@@ -45,7 +45,7 @@
     "@mdx-js/tag": "^0.20.3",
     "chalk": "3.0.0",
     "date-fns": "^2.2.1",
-    "meow": "5.0.0"
+    "meow": "6.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.7.4",
