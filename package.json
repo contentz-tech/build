@@ -68,7 +68,7 @@
     "@typescript-eslint/parser": "^1.13.0",
     "@zeit/ncc": "^0.21.0",
     "babel-eslint": "^10.0.3",
-    "cpy": "8.0.0",
+    "cpy": "8.0.1",
     "del": "5.1.0",
     "emotion": "10.0.27",
     "emotion-server": "10.0.27",
