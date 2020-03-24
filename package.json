@@ -63,7 +63,7 @@
     "@types/mkdirp": "^0.5.2",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
-    "@types/rimraf": "^2.0.2",
+    "@types/rimraf": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "@zeit/ncc": "^0.21.0",
