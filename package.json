@@ -102,7 +102,7 @@
     "serve": "^11.1.0",
     "serve-handler": "^6.1.1",
     "term-size": "^2.1.0",
-    "terser": "4.6.6",
+    "terser": "4.6.9",
     "typescript": "^3.6.3"
   },
   "husky": {
