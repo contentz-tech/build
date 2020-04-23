@@ -5436,12 +5436,12 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash.get@^4.0.0, lodash.get@^4.4.2:
+lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
-lodash.isequal@^4.0.0:
+lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
@@ -6979,12 +6979,12 @@ restore-cursor@^3.1.0:
     onetime "^5.1.0"
     signal-exit "^3.0.2"
 
-resume-schema@^0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/resume-schema/-/resume-schema-0.0.18.tgz#1a52468b3eb77bad58a2c0fc36259d1673ea9d6f"
-  integrity sha512-CNomhyZSKzrpUqYCFiRRPpfClz78BhgOb+ksGxLy46Yt/xBwnZP/2bLJO60GbAMnI1nxMCtSj+pjBQtILvPs6w==
+resume-schema@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/resume-schema/-/resume-schema-0.1.2.tgz#0e61509338edb8e8ebbffcd841c222b7049d1f2f"
+  integrity sha512-UiDgqPWmcJmeVW77c6Y7vEXXBlCKfY7afkYZvF+pgnj/dKGi2xN3DV1kBbFPuOqmS3SUseq9QkQLqz5pr2A37g==
   dependencies:
-    z-schema "~3.19.0"
+    z-schema "^4.2.2"
 
 ret@~0.1.10:
   version "0.1.15"
@@ -8147,10 +8147,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-validator@^9.0.0:
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-9.4.1.tgz#abf466d398b561cd243050112c6ff1de6cc12663"
-  integrity sha512-YV5KjzvRmSyJ1ee/Dm5UED0G+1L4GZnLN3w6/T+zZm8scVua4sOhYKWTUrKa0H/tMiJyO9QLHMPN+9mB/aMunA==
+validator@^11.0.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-11.1.0.tgz#ac18cac42e0aa5902b603d7a5d9b7827e2346ac4"
+  integrity sha512-qiQ5ktdO7CD6C/5/mYV4jku/7qnqzjrxb3C/Q5wR3vGGinHTgJZN/TdFT3ZX4vXhX2R1PXx42fB1cn5W+uJ4lg==
 
 vary@~1.1.2:
   version "1.1.2"
@@ -8455,13 +8455,13 @@ yoga-layout-prebuilt@^1.9.3:
   resolved "https://registry.yarnpkg.com/yoga-layout-prebuilt/-/yoga-layout-prebuilt-1.9.3.tgz#11e3be29096afe3c284e5d963cc2d628148c1372"
   integrity sha512-9SNQpwuEh2NucU83i2KMZnONVudZ86YNcFk9tq74YaqrQfgJWO3yB9uzH1tAg8iqh5c9F5j0wuyJ2z72wcum2w==
 
-z-schema@~3.19.0:
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/z-schema/-/z-schema-3.19.1.tgz#1faa828146d9365330031e962fbd071c7c6434ac"
-  integrity sha512-jPNzqmOu3+AGbb4krDODqo4QBzwUGDVzyfGyy1HtWaUnafltQotatSpxxWd6Mp0iSZOUwHU5sqKYi+U8HsHMkg==
+z-schema@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/z-schema/-/z-schema-4.2.2.tgz#43fa2709ae5016885db50e1ce31b254b72c0886c"
+  integrity sha512-7bGR7LohxSdlK1EOdvA/OHksvKGE4jTLSjd8dBj9YKT0S43N9pdMZ0Z7GZt9mHrBFhbNTRh3Ky6Eu2MHsPJe8g==
   dependencies:
-    lodash.get "^4.0.0"
-    lodash.isequal "^4.0.0"
-    validator "^9.0.0"
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    validator "^11.0.0"
   optionalDependencies:
     commander "^2.7.1"
