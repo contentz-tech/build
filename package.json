@@ -97,7 +97,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-slugify": "2.0.1",
-    "resume-schema": "^0.0.18",
+    "resume-schema": "^0.1.2",
     "rimraf": "^3.0.0",
     "serve": "^11.1.0",
     "serve-handler": "^6.1.1",
