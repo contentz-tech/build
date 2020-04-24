@@ -74,7 +74,7 @@ async function archiveBuilder(state: IState) {
     return await del("public/articles/index.html");
   }
   const html = await render(
-    <Document path="archive.mdx">
+    <Document path="/articles.mdx">
       <Archive />
     </Document>,
     { state }

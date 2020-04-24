@@ -11,7 +11,7 @@ import Document from "../components/document";
 async function builder(state: IState) {
   if (await check("config.yml", state.config)) return;
   const html = await render(
-    <Document path="error.mdx">
+    <Document path="/error.mdx">
       <ErrorPage />
     </Document>,
     { state }

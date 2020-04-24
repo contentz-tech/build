@@ -8,12 +8,16 @@ import { IArticle } from "../getters/articles";
 
 function formatURL(domain: string, path: string): string {
   if (!path) return domain;
-  return `${domain}${path.slice(1, path.indexOf(".mdx"))}/`;
+  return `${domain}/${path.slice(1, path.indexOf(".mdx"))}/`;
 }
 
 function formatOGURL(path: string, domain?: string): string {
   if (domain) return domain + formatOGURL(path);
-  return join("/static/_social", path).replace(".mdx", ".png");
+  if (path.endsWith("/")) {
+    return join("/static/_social", path).replace(/.$/, ".png");
+  } else {
+    return join("/static/_social", path).replace(".mdx", ".png");
+  }
 }
 
 interface BaseProps {
