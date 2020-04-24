@@ -19,7 +19,7 @@ async function builder(state: IState) {
   }
 
   const html = await render(
-    <Document path="links.mdx">
+    <Document path="/links.mdx">
       <LinksPage />
     </Document>,
     { state }

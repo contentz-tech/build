@@ -17,7 +17,7 @@ async function builder(state: IState) {
     return;
   }
   const html = await render(
-    <Document path="cv.mdx">
+    <Document path="/cv.mdx">
       <ResumePage />
     </Document>,
     { state }

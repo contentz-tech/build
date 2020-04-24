@@ -104,7 +104,7 @@ async function slideListBuilder(state: IState) {
     return await del("public/slides/index.html");
   }
   const html = await render(
-    <Document path="slides.mdx">
+    <Document path="/slides.mdx">
       <SlidesPage />
     </Document>,
     { state }
