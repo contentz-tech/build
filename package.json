@@ -1,7 +1,7 @@
 {
   "name": "@contentz/build",
   "description": "Build your Contentz website for production",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "main": "dist/index.js",
   "bin": "./cli.js",
   "files": [
