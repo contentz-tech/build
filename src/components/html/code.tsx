@@ -28,7 +28,7 @@ function Pre({ heightLimit = false, ...props }: any) {
       <pre
         {...props}
         css={{
-          overflowX: "scroll",
+          overflowX: "auto",
           maxHeight: heightLimit ? "30vh" : "none",
           code: {
             color: "black",

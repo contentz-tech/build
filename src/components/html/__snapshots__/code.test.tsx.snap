@@ -80,7 +80,7 @@ exports[`Code Pre 1`] = `
 }
 
 .emotion-1 {
-  overflow-x: scroll;
+  overflow-x: auto;
   max-height: none;
 }
 
