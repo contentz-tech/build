@@ -44,7 +44,6 @@ function Header() {
             href="/"
             title={state.i18n.header.mainLinkDescription}
             css={{
-              flex: 1,
               whiteSpace: "nowrap",
               color: "black",
               textDecoration: "none"
