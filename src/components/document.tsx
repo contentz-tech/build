@@ -8,7 +8,11 @@ import { IArticle } from "../getters/articles";
 
 function formatURL(domain: string, path: string): string {
   if (!path) return domain;
-  return `${domain}/${path.slice(1, path.indexOf(".mdx"))}/`;
+  const isCustomPage = path.includes("/pages");
+  return `${domain}/${path.slice(
+    isCustomPage ? path.indexOf("/pages") + 7 : 1,
+    path.indexOf(".mdx")
+  )}/`;
 }
 
 function formatOGURL(path: string, domain?: string): string {

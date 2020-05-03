@@ -55,7 +55,7 @@ function pageBuilder(state: IState) {
       { state }
     );
     const html: string = await render(
-      <Document data={page} path={page.path} content={renderedContent} />,
+      <Document data={page} path={join("/pages", page.path)} content={renderedContent} />,
       { state }
     );
     await makeDir(resolve(join("./public", page.path)));
