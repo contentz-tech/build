@@ -39,9 +39,6 @@ exports[`Header Complete 1`] = `
 }
 
 .emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   white-space: nowrap;
   color: black;
   -webkit-text-decoration: none;
@@ -170,9 +167,6 @@ exports[`Header Only Title 1`] = `
 }
 
 .emotion-0 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   white-space: nowrap;
   color: black;
   -webkit-text-decoration: none;
