@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import { jsx } from "@emotion/core";
-import { join } from "path";
 import { useState } from "./state";
 import { IPage } from "../getters/pages";
 import { ISlide } from "../getters/slides";
@@ -15,18 +14,74 @@ function formatURL(domain: string, path: string): string {
   )}/`;
 }
 
-function formatOGURL(path: string, domain?: string): string {
-  if (domain) return domain + formatOGURL(path);
-  if (path.endsWith("/")) {
-    return join("/static/_social", path).replace(/.$/, ".png");
-  } else {
-    return join("/static/_social", path).replace(".mdx", ".png");
+function formatOGURL(
+  title: string | undefined,
+  description: string | undefined,
+  path: string
+): string {
+  const OGInfo = prepareOGInfo(title, description, path);
+  const api = "https://i.microlink.io/";
+  const cardUrl = `https://cards.microlink.io/?preset=contentz&title=${OGInfo.title}&description=${OGInfo.description}`;
+  const image = `${api}${encodeURIComponent(cardUrl)}`;
+  return image;
+}
+
+function prepareOGInfo(
+  title: string | undefined,
+  description: string | undefined,
+  path: string
+) {
+  switch (path) {
+    case "/home.mdx": {
+      return {
+        title,
+        description,
+      };
+    }
+    case "/articles.mdx":
+    case "/archive.mdx": {
+      return {
+        title: "Articles",
+        description: `List of articles of ${title}`,
+      };
+    }
+    case "/links.mdx": {
+      return {
+        title: "Shared Links",
+        description: "",
+      };
+    }
+    case "/error.mdx": {
+      return {
+        title: "Error 404",
+        description:
+          "The page, article or slide you have tried to access was not found",
+      };
+    }
+    case "/slides.mdx": {
+      return {
+        title: "Talks",
+        description: `List of talks of ${title}`,
+      };
+    }
+    case "/cv.mdx": {
+      return {
+        title: "CV",
+        description: `${title}'s resume`,
+      };
+    }
+    default: {
+      return {
+        title,
+        description,
+      };
+    }
   }
 }
 
 interface BaseProps {
   data?: IPage | ISlide | IArticle;
-  links?: string[],
+  links?: string[];
   path: string;
 }
 
@@ -102,7 +157,15 @@ function Document(props: DocumentProps) {
         />
         <meta
           property="og:image"
-          content={(props.data && props.data.social) || formatOGURL(props.path)}
+          content={
+            (props.data && props.data.social) ||
+            formatOGURL(
+              (props.data && props.data.title) || state.config.title,
+              (props.data && props.data.description) ||
+                state.config.description,
+              props.path
+            )
+          }
         />
         <meta
           property="og:image:alt"
@@ -156,7 +219,12 @@ function Document(props: DocumentProps) {
           name="twitter:image"
           content={
             (props.data && props.data.social) ||
-            formatOGURL(props.path, state.config.domain)
+            formatOGURL(
+              (props.data && props.data.title) || state.config.title,
+              (props.data && props.data.description) ||
+                state.config.description,
+              props.path
+            )
           }
         />
         <meta name="twitter:summary" content={state.config.description} />
@@ -170,12 +238,12 @@ function Document(props: DocumentProps) {
         )}
         {state.articles.order
           .concat(
-            (props.links || []),
+            props.links || [],
             state.pages.order,
             state.slides.order,
             (state.config.navigation || [])
               .map(({ path }) => (path.endsWith("/") ? path : `${path}/`))
-              .filter(path => path.startsWith("/"))
+              .filter((path) => path.startsWith("/"))
           )
           .map((link: string) => (
             <link rel="prefetch" href={link} key={link} />
@@ -188,7 +256,7 @@ function Document(props: DocumentProps) {
           margin: 0,
           fontSize: "18px",
           fontFamily:
-            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
         }}
       >
         {props.children ? (
