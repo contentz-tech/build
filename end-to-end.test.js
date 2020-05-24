@@ -119,6 +119,34 @@ describe("End to End", () => {
     );
   });
 
+  test("Article Page without description", async () => {
+    await page.goto("http://localhost:5000/articles/my-second-article/");
+    await expect(page).toMatch("My Second Article");
+    await expect(page).toMatch("May 24, 2020");
+    await expect(page).toMatch("This is my second article.");
+    await expect(page).toMatch("This article has no description");
+    await expect(page).toMatch("Edit it on GitHub");
+    await expect(page).toMatch("Do you like my content?");
+    await expect(page).toMatch(
+      "Become a Patreon and help me continue writing!"
+    );
+    const ogURLContent = await getMetaTagContent(page, "og:url");
+    expect(ogURLContent).toMatch(
+      "https://contentz.tech/articles/my-second-article/"
+    );
+    const ogImage = await getMetaTagContent(page, "og:image");
+    expect(ogImage).toMatch(
+      "https://i.microlink.io/https%3A%2F%2Fcards.microlink.io%2F%3Fpreset%3Dcontentz%26title%3DMy%20Second%20Article%26description%3D"
+    );
+    expect(ogImage).not.toMatch(
+      "https://i.microlink.io/https%3A%2F%2Fcards.microlink.io%2F%3Fpreset%3Dcontentz%26title%3DMy%20Second%20Article%26description%3DCreate%20Content%2C%20Get%20a%20Highly%20Optimized%20Website"
+    );
+    expect(ogImage).toContain(encodeURIComponent("My Second Article"));
+    expect(ogImage).not.toContain(
+      encodeURIComponent("Create Content, Get a Highly Optimized Website")
+    );
+  });
+
   test("Custom Page", async () => {
     await page.goto("http://localhost:5000/about/");
     await expect(page).toMatch("About me");
