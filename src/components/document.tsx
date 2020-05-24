@@ -1,9 +1,11 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Fragment } from "react";
 import { jsx } from "@emotion/core";
 import { useState } from "./state";
 import { IPage } from "../getters/pages";
 import { ISlide } from "../getters/slides";
 import { IArticle } from "../getters/articles";
+import { IConfig } from "../getters/config";
 
 function formatURL(domain: string, path: string): string {
   if (!path) return `${domain}/`;
@@ -15,34 +17,39 @@ function formatURL(domain: string, path: string): string {
 }
 
 function formatOGURL(
-  title: string | undefined,
-  description: string | undefined,
+  data: BaseProps["data"],
+  config: IConfig,
   path: string
 ): string {
-  const OGInfo = prepareOGInfo(title, description, path);
+  const OGInfo = prepareOGInfo(data, config, path);
   const api = "https://i.microlink.io/";
   const cardUrl = `https://cards.microlink.io/?preset=contentz&title=${OGInfo.title}&description=${OGInfo.description}`;
   const image = `${api}${encodeURIComponent(cardUrl)}`;
   return image;
 }
 
+interface OGInfo {
+  title: string | undefined;
+  description: string | undefined;
+}
+
 function prepareOGInfo(
-  title: string | undefined,
-  description: string | undefined,
+  data: BaseProps["data"],
+  config: IConfig,
   path: string
-) {
+): OGInfo {
   switch (path) {
-    case "/home.mdx": {
+    case "": {
       return {
-        title,
-        description,
+        title: config.title,
+        description: config.description,
       };
     }
     case "/articles.mdx":
     case "/archive.mdx": {
       return {
         title: "Articles",
-        description: `List of articles of ${title}`,
+        description: `List of articles of ${config.title}`,
       };
     }
     case "/links.mdx": {
@@ -61,19 +68,19 @@ function prepareOGInfo(
     case "/slides.mdx": {
       return {
         title: "Talks",
-        description: `List of talks of ${title}`,
+        description: `List of talks of ${config.title}`,
       };
     }
     case "/cv.mdx": {
       return {
         title: "CV",
-        description: `${title}'s resume`,
+        description: `${config.title}'s resume`,
       };
     }
     default: {
       return {
-        title,
-        description,
+        title: data && data.title ? data.title : "",
+        description: data && data.description ? data.description : "",
       };
     }
   }
@@ -97,7 +104,7 @@ interface ContentProps extends BaseProps {
 
 type DocumentProps = ChildrenProps | ContentProps;
 
-function Document(props: DocumentProps) {
+function Document(props: DocumentProps): JSX.Element {
   const state = useState();
 
   return (
@@ -159,12 +166,7 @@ function Document(props: DocumentProps) {
           property="og:image"
           content={
             (props.data && props.data.social) ||
-            formatOGURL(
-              (props.data && props.data.title) || state.config.title,
-              (props.data && props.data.description) ||
-                state.config.description,
-              props.path
-            )
+            formatOGURL(props.data, state.config, props.path)
           }
         />
         <meta
@@ -219,12 +221,7 @@ function Document(props: DocumentProps) {
           name="twitter:image"
           content={
             (props.data && props.data.social) ||
-            formatOGURL(
-              (props.data && props.data.title) || state.config.title,
-              (props.data && props.data.description) ||
-                state.config.description,
-              props.path
-            )
+            formatOGURL(props.data, state.config, props.path)
           }
         />
         <meta name="twitter:summary" content={state.config.description} />
@@ -242,12 +239,16 @@ function Document(props: DocumentProps) {
             state.pages.order,
             state.slides.order,
             (state.config.navigation || [])
-              .map(({ path }) => (path.endsWith("/") ? path : `${path}/`))
-              .filter((path) => path.startsWith("/"))
+              .map(({ path }): string =>
+                path.endsWith("/") ? path : `${path}/`
+              )
+              .filter((path): boolean => path.startsWith("/"))
           )
-          .map((link: string) => (
-            <link rel="prefetch" href={link} key={link} />
-          ))}
+          .map(
+            (link: string): JSX.Element => (
+              <link rel="prefetch" href={link} key={link} />
+            )
+          )}
       </head>
       <body
         css={{
