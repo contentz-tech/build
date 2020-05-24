@@ -6,7 +6,7 @@ import { ISlide } from "../getters/slides";
 import { IArticle } from "../getters/articles";
 
 function formatURL(domain: string, path: string): string {
-  if (!path) return domain;
+  if (!path) return `${domain}/`;
   const isCustomPage = path.includes("/pages");
   return `${domain}/${path.slice(
     isCustomPage ? path.indexOf("/pages") + 7 : 1,

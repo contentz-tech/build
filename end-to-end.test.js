@@ -13,7 +13,7 @@ describe("End to End", () => {
       "Create Content, Get a Highly Optimized Website"
     );
     const ogURLContent = await getMetaTagContent(page, "og:url");
-    expect(ogURLContent).toMatch("https://contentz.tech/home/");
+    expect(ogURLContent).toMatch("https://contentz.tech/");
     const ogImage = await getMetaTagContent(page, "og:image");
     expect(ogImage).toMatch(
       "https://i.microlink.io/https%3A%2F%2Fcards.microlink.io%2F%3Fpreset%3Dcontentz%26title%3DContentz%20Test%26description%3DCreate%20Content%2C%20Get%20a%20Highly%20Optimized%20Website"
