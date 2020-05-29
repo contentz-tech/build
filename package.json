@@ -88,7 +88,7 @@
     "jest": "^26.0.0",
     "jest-emotion": "^10.0.17",
     "jest-puppeteer": "^4.3.0",
-    "lint-staged": "10.2.6",
+    "lint-staged": "10.2.7",
     "mkdirp": "0.5.1",
     "parse-url": "5.0.1",
     "pptr-testing-library": "^0.6.0",
