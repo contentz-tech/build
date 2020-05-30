@@ -44,7 +44,7 @@ interface IArticles {
 async function toContent(path: string): Promise<IFile> {
   return {
     content: await readFile(path, "utf8"),
-    ...parsePath(path)
+    ...parsePath(path),
   };
 }
 
@@ -53,13 +53,13 @@ async function toContent(path: string): Promise<IFile> {
  * @param file A file with their content and path
  */
 function toArticle(config: IConfig) {
-  return async function(file: IFile): Promise<IArticle> {
+  return async function (file: IFile): Promise<IArticle> {
     const {
       data,
       content,
       path,
       tmpPath,
-      filePath
+      filePath,
     }: IFrontMatterFile = await readMeta(file);
 
     return {
@@ -71,7 +71,7 @@ function toArticle(config: IConfig) {
       filePath,
       ...(config.repository
         ? { repositoryPath: parseRepositoryPath(config.repository, filePath) }
-        : {})
+        : {}),
     };
   };
 }
@@ -84,7 +84,7 @@ function toArticle(config: IConfig) {
 function toMap(articles: ArticlesMap, article: IArticle): ArticlesMap {
   return {
     ...articles,
-    [article.path]: article
+    [article.path]: article,
   };
 }
 
@@ -118,10 +118,7 @@ async function articles(config: IConfig): Promise<IArticles> {
   const articles = await Promise.all(files.map(toArticle(config)));
   return {
     byPath: articles.reduce(toMap, {}),
-    order: articles
-      .filter(onlyPublished)
-      .sort(byDate)
-      .map(toPath)
+    order: articles.filter(onlyPublished).sort(byDate).map(toPath),
   };
 }
 
