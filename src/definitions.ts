@@ -10,10 +10,12 @@ export interface IContent extends IPath {
   canonical_url?: string;
   published?: boolean;
   social?: string;
+  youtube?: string;
+  vimeo?: string;
 }
 
 export enum ContentType {
   Article = "article",
   Slide = "slide",
-  Page = "page"
+  Page = "page",
 }
