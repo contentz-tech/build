@@ -2,17 +2,17 @@
 import { jsx } from "@emotion/core";
 import Card from "./card";
 
-function formatYoutube(id: string | undefined): string {
+function formatYoutube(id?: string): string {
   return `https://www.youtube.com/embed/${id}`;
 }
 
-function formatVimeo(id: string | undefined): string {
+function formatVimeo(id?: string): string {
   return `https://player.vimeo.com/video/${id}`;
 }
 
 interface VideoProps {
-  youtube: string | undefined;
-  vimeo: string | undefined;
+  youtube?: string;
+  vimeo?: string;
   caption?: string;
 }
 
@@ -31,7 +31,7 @@ function Video({ youtube, vimeo, caption }: VideoProps): JSX.Element {
       >
         <iframe
           src={youtube ? formatYoutube(youtube) : formatVimeo(vimeo)}
-          title={caption || youtube ? "YouTube Video" : "Video"}
+          title={caption || "Video"}
           css={{
             border: "none",
             position: "absolute",
