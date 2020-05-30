@@ -77,8 +77,8 @@ function Layout({ data, TOC, Component }: LayoutProps): JSX.Element {
         {data.type === ContentType.Article && data.translated_to && (
           <Translated.To translations={data.translated_to} />
         )}
-        {(data["youtube-video"] || data["vimeo-video"]) && (
-          <Video youtube={data["youtube-video"]} vimeo={data["vimeo-video"]} />
+        {(data.youtube || data.vimeo) && (
+          <Video youtube={data.youtube} vimeo={data.vimeo} />
         )}
         <Component components={ui} />
         {data.type === ContentType.Article && data.next && (
