@@ -16,12 +16,22 @@
   "env": {
     "node": true,
     "es6": true,
-    "jest": true,
+    "jest": true
   },
   "globals": {
     "page": true,
     "browser": true,
     "context": true,
     "jestPuppeteer": true
+  },
+  "rules": {
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "whitelist": {
+          "props": true
+        }
+      }
+    ]
   }
 }
