@@ -58,7 +58,7 @@ function Basics(props: Basics) {
       <div>
         {props.email && (
           <ui.a
-            href={props.email}
+            href={`mailto:${props.email}`}
             title="Email address"
             css={{ display: "inline-block", marginBottom: "10px" }}
           >
