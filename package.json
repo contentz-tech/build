@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@mdx-js/tag": "^0.20.3",
-    "chalk": "4.0.0",
+    "chalk": "4.1.0",
     "date-fns": "^2.2.1",
     "meow": "7.0.1"
   },
