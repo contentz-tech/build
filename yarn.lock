@@ -6307,9 +6307,9 @@ posix-character-classes@^0.1.0:
   integrity sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
 
 pptr-testing-library@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/pptr-testing-library/-/pptr-testing-library-0.6.0.tgz#fc028a77e8f2f089a3dfbf1e0b71fe5f6d48bfcd"
-  integrity sha512-vHQQebEYRcnk/fmmQSrCO67XiAjDcxEWZEITIAq3EW80nmrgQOUHOvN34vDwGOV1iBIsnm6eiSfPK8tG2wDi/g==
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/pptr-testing-library/-/pptr-testing-library-0.6.1.tgz#3c144ea1a1bc16bc3c99fabe4ffd7b899230bc7a"
+  integrity sha512-vlh9Mi9u+6ZvzdnYaltAgdZuu4f5H2It0ZVTLlovRQvW41pGN24twPhfKQg0nZcb+UYcVc2HwEUfcV17t0QyAg==
   dependencies:
     "@testing-library/dom" "^7.0.4"
     wait-for-expect "^3.0.2"
