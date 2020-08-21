@@ -84,7 +84,7 @@
     "eslint-plugin-unicorn": "^19.0.1",
     "fast-glob": "^3.0.4",
     "gray-matter": "4.0.2",
-    "ink": "^2.3.0",
+    "ink": "^3.0.4",
     "jest": "^26.0.0",
     "jest-emotion": "^10.0.17",
     "jest-puppeteer": "^4.3.0",
