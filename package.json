@@ -48,7 +48,7 @@
     "meow": "7.1.1"
   },
   "devDependencies": {
-    "@babel/core": "7.11.4",
+    "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
