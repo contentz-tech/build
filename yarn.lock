@@ -6610,10 +6610,10 @@ react-reconciler@^0.24.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-slugify@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/react-slugify/-/react-slugify-2.0.1.tgz#719410fc2f6cfeb77f731d57adae4f47649ebd15"
-  integrity sha512-vy5dAh9puvno06cV1TgK/FoSviXErOYD5fSngR/qygJkwkI2V4YjF76mnhIIp2fUJyA0ox5Ab3ASH+efNzqaPQ==
+react-slugify@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-slugify/-/react-slugify-2.0.2.tgz#af59ebcb2989b8e80d1863bab598cfad87a43353"
+  integrity sha512-Q9k8rYh2FeSvXD9/p9g+Kk8zXjUpbmgpkZs/EdoVmV2crRMlcSYm7S31bXdnnCdbVGH9z73A0oD/vws1+AZHJQ==
 
 react@16.13.1:
   version "16.13.1"
