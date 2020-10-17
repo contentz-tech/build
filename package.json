@@ -95,7 +95,7 @@
     "prettier": "^2.0.1",
     "puppeteer": "^2.1.1",
     "react": "16.14.0",
-    "react-dom": "16.13.1",
+    "react-dom": "16.14.0",
     "react-slugify": "2.0.2",
     "resume-schema": "^0.1.2",
     "rimraf": "^3.0.0",
