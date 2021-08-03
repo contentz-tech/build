@@ -52,7 +52,7 @@
     "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
-    "@emotion/babel-preset-css-prop": "10.2.1",
+    "@emotion/babel-preset-css-prop": "11.2.0",
     "@emotion/core": "10.1.1",
     "@mdx-js/mdx": "0.17.5",
     "@testing-library/jest-dom": "^4.1.0",
