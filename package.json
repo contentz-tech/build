@@ -86,7 +86,7 @@
     "gray-matter": "4.0.2",
     "ink": "^2.3.0",
     "jest": "^26.0.0",
-    "jest-emotion": "^10.0.17",
+    "jest-emotion": "^11.0.0",
     "jest-puppeteer": "^4.3.0",
     "lint-staged": "10.5.1",
     "mkdirp": "0.5.1",
